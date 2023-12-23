@@ -1,0 +1,4 @@
+Instructions
+------------
+
+This is where you can see the development of Warzone. Simply go to the ARCHIVE folder and open up one of the Phase folders. Copy the files and paste them into this folder. Open the folder in VS Code to view the files at that phase of development. To run the game open the Terminal type in python main.py to see the state of the game was at that phase.
