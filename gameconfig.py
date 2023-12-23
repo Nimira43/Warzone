@@ -18,6 +18,7 @@ FPS = 60
 BLACK = (0, 0, 0)
 RED = (255, 0, 0)
 GREY = (99, 99, 99)
+GREEN = (0, 255, 0)
 
 TANK_SPEED = imageSize // spriteSize
 
