@@ -14,8 +14,6 @@ class Bullet(pygame.sprite.Sprite):
         self.images = self.assets.bullet_images
         self.image = self.images[self.direction]
         self.rect = self.image.get_rect(center = (self.xPos, self.yPos))
-        self.mask = pygame.mask.from_surface(self.image)
-        # self.mask_image = self.mask.to_surface()
         self.bullet_group.add(self)
 
     def update(self):
@@ -26,7 +24,6 @@ class Bullet(pygame.sprite.Sprite):
 
     def draw(self, window):
         window.blit(self.image, self.rect)
-        # window.blit(self.mask_image, self.rect)
         pygame.draw.rect(window, gc.GREEN, self.rect, 1)
 
     def move(self):
@@ -55,32 +52,29 @@ class Bullet(pygame.sprite.Sprite):
             if self.owner == tank or tank.spawning == True:
                 continue
             if self.owner.enemy == False and tank.enemy == False:
-                if pygame.sprite.collide_mask(self, tank):
-                    self.update_owner()
-                    tank.paralyze_tank(gc.TANK_PARALYSIS)
-                    self.kill()
-                    break
+                self.update_owner()
+                tank.paralyze_tank(gc.TANK_PARALYSIS)
+                self.kill()
+                break
             if (self.owner.enemy == False and tank.enemy == True) or \
                 (self.owner.enemy == True and tank.enemy == False):
-                if pygame.sprite.collide_mask(self, tank):
-                    self.update_owner()
-                    tank.destroy_tank()
-                    self.kill()
-                    break
+                self.update_owner()
+                tank.destroy_tank()
+                self.kill()
+                break
 
     def collision_with_bullet(self):
         bullet_hit = pygame.sprite.spritecollide(self, self.bullet_group, False)
         if len(bullet_hit) == 1:
             return
-        for bullet in bullet_hit:      
+        for bullet in bullet_hit:
             if bullet == self:
                 continue
-            if pygame.sprite.collide_mask(self, bullet):
-                bullet.update_owner()
-                bullet.kill()
-                self.update_owner()
-                self.kill()
-                break
+            bullet.update_owner()
+            bullet.kill()
+            self.update_owner()
+            self.kill()
+            break
     
     def update_owner(self):
         if self.owner.bullet_sum > 0:

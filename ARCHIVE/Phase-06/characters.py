@@ -44,11 +44,6 @@ class Tank(pygame.sprite.Sprite):
         self.spawn_timer = pygame.time.get_ticks()
         self.spawn_anim_timer = pygame.time.get_ticks()
 
-        self.mask_dict = self.get_various_masks()
-        self.mask = self.mask_dict[self.direction]
-        # self.mask_image = self.mask.to_surface()
-        self.mask_direction = self.direction
-
     def input(self):
         pass
 
@@ -71,7 +66,6 @@ class Tank(pygame.sprite.Sprite):
 
         if self.active:
             window.blit(self.image, self.rect)
-            # window.blit(self.mask_image, self.rect)
             pygame.draw.rect(window, gc.RED, self.rect, 1)
 
     def move_tank(self, direction):
@@ -106,24 +100,13 @@ class Tank(pygame.sprite.Sprite):
         self.frame_index += 1
         imagelistlength = len(self.tank_images[f'Tank_{self.tank_level}'][self.colour][self.direction])
         self.frame_index = self.frame_index % imagelistlength
-        self.image = self.tank_images[f'Tank_{self.tank_level}'][self.colour][self.direction][self.frame_index]
-        if self.mask_direction != self.direction:
-            self.mask_direction = self.direction
-            self.mask = self.mask_dict[self.mask_direction]
-            # self.mask_image = self.mask.to_surface()  
+        self.image = self.tank_images[f'Tank_{self.tank_level}'][self.colour][self.direction][self.frame_index]  
 
     def spawn_animation(self): 
         self.frame_index += 1
         self.frame_index = self.frame_index % len(self.spawn_images)
         self.spawn_image = self.spawn_images[f'star_{self.frame_index}']
         self.spawn_anim_timer = pygame.time.get_ticks()
-
-    def get_various_masks(self):
-        images = {}
-        for direction in ['Up', 'Down', 'Left', 'Right']:
-            image_to_mask = self.tank_images[f'Tank_{self.tank_level}'][self.colour][direction][0]
-            images.setdefault(direction, pygame.mask.from_surface(image_to_mask))
-        return images
 
     def tank_on_tank_collisions(self):
         tank_collision = pygame.sprite.spritecollide(self, self.tank_group, False)
