@@ -4,7 +4,7 @@ import gameconfig as gc
 
 class Tank(pygame.sprite.Sprite):
 
-    def __init__(self, game, assets, groups, position, direction, colour='Silver', tank_level=0):
+    def __init__(self, game, assets, groups, position, direction, enemy = True, colour='Silver', tank_level=0):
         super().__init__()
         self.game = game
         self.assets = assets
@@ -25,11 +25,20 @@ class Tank(pygame.sprite.Sprite):
         self.tank_level = tank_level
         self.colour = colour
         self.tank_speed = gc.TANK_SPEED
+        self.enemy = enemy
+        self.tank_health = 1
 
         self.frame_index = 0
         self.image = self.tank_images[f'Tank_{self.tank_level}'][self.colour][self.direction][self.frame_index]
         self.rect = self.image.get_rect(topleft=(self.spawn_pos))
         self.width, self.height = self.image.get_size()
+
+        self.bullet_limit = 1
+        self.bullet_sum = 0
+
+        self.paralyzed = False
+        self.paralysis = gc.TANK_PARALYSIS
+        self.paralysis_timer = pygame.time.get_ticks()
 
         self.spawn_image = self.spawn_images[f'star_{self.frame_index}']
         self.spawn_timer = pygame.time.get_ticks()
@@ -46,7 +55,10 @@ class Tank(pygame.sprite.Sprite):
                 self.frame_index = 0
                 self.spawning = False
                 self.active = True
-        return
+            return
+        if self.paralyzed:
+            if pygame.time.get_ticks() - self.paralysis_timer >= self.paralysis:
+                self.paralyzed = False
 
     def draw(self, window):
         if self.spawning:
@@ -59,8 +71,10 @@ class Tank(pygame.sprite.Sprite):
     def move_tank(self, direction):
         if self.spawning:
             return
-        self.direction = direction
-
+        self.direction = direction        
+        if self.paralyzed:
+            self.image = self.tank_images[f'Tank_{self.tank_level}'][self.colour][self.direction][self.frame_index]
+            return
         if direction == 'Up':
             self.yPos -= self.tank_speed
             if self.yPos < gc.SCREEN_BORDER_TOP:
@@ -127,12 +141,25 @@ class Tank(pygame.sprite.Sprite):
                     self.yPos = self.rect.y
 
     def shoot(self):
+        if self.bullet_sum >= self.bullet_limit:
+            return
         bullet = Bullet(self.groups, self, self.rect.center, self.direction, self.assets)
+        self.bullet_sum += 1
 
+    def paralyze_tank(self, paralysis_time):
+        self.paralysis = paralysis_time
+        self.paralyzed = True
+        self.paralysis_timer = pygame.time.get_ticks()
+
+    def destroy_tank(self):
+        self.tank_health -= 1
+        if self.tank_health <= 0:
+            self.kill()
+            return
 
 class PlayerTank(Tank):
     def __init__(self, game, assets, groups, position, direction, colour, tank_level):
-        super().__init__(game, assets, groups, position, direction, colour, tank_level)
+        super().__init__(game, assets, groups, position, direction, False, colour, tank_level)
         self.lives = 3
     
     def input(self, keypressed):

@@ -21,6 +21,7 @@ GREY = (99, 99, 99)
 GREEN = (0, 255, 0)
 
 TANK_SPEED = imageSize // spriteSize
+TANK_PARALYSIS = 2000
 
 SPAWN_STAR = {'star_0': [(spriteSize * 16), (spriteSize * 6), spriteSize, spriteSize],
               'star_1': [(spriteSize * 17), (spriteSize * 6), spriteSize, spriteSize],

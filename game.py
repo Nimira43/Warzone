@@ -44,6 +44,7 @@ class Game:
                         self.player2.shoot()
 
                 if event.key == pygame.K_RETURN:
+                    Tank(self, self.assets, self.groups, (400, 400), 'Down')
                     self.enemies -= 1
 
     def update(self):
