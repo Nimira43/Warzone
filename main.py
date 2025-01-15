@@ -1,6 +1,6 @@
 import pygame
 import game_config as gc
-# from game_assets import GameAssets
+from game_assets import GameAssets
 
 class Main:
   def __init__(self):
@@ -9,7 +9,7 @@ class Main:
     pygame.display.set_caption('Warzone')
     self.Clock = pygame.time.Clock()
     self.run = True
-    # self.assets = GameAssets()
+    self.assets = GameAssets()
 
   def run_game(self):
     while self.run:
