@@ -1,5 +1,5 @@
 import pygame
-import gameconfig as gc
+import game_config as gc
 from characters import Tank, PlayerTank
 from game_hud import GameHud
 

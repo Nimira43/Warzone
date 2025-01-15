@@ -1,5 +1,5 @@
 import pygame
-import gameconfig as gc
+import game_config as gc
 
 class GameHud:
     def __init__(self, game, assets):

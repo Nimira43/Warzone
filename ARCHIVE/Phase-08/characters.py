@@ -1,6 +1,6 @@
 import pygame
 from ammunition import Bullet
-import gameconfig as gc
+import game_config as gc
 
 class Tank(pygame.sprite.Sprite):
 

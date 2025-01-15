@@ -1,5 +1,5 @@
 import pygame
-import gameconfig as gc
+import game_config as gc
 
 class GameAssets:
     def __init__(self):
