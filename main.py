@@ -2,7 +2,7 @@ import pygame
 import game_config as gc
 from game_assets import GameAssets
 from game import Game
-from leveleditor import LevelEditor
+from level_editor import LevelEditor
 
 class Main:
   def __init__(self):
