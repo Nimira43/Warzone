@@ -11,8 +11,8 @@ class Tank(pygame.sprite.Sprite):
 
         self.tank_group = self.groups['All_Tanks']
         self.tank_group.add(self)
+
         self.tank_images = self.assets.tank_images
-        
         self.spawn_images = self.assets.spawn_star_images
         self.spawn_pos = position
         self.xPos, self.yPos = self.spawn_pos
