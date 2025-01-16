@@ -37,6 +37,8 @@ class Main:
   def draw(self):
     self.screen.fill(gc.BLACK)
     # self.screen.blit(self.assets.tank_images['Tank_4']['Green']['Down'][0], (400, 400))
+    if self.game_on:
+      self.game.draw(self.screen)
     pygame.display.update()
 
 if __name__=='__main__':
