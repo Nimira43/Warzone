@@ -9,6 +9,7 @@ class Main:
         pygame.init()
         self.screen = pygame.display.set_mode((gc.SCREENWIDTH, gc.SCREENHEIGHT))
         pygame.display.set_caption('Warzone')
+        
         self.Clock = pygame.time.Clock()
         self.run = True
         self.assets = GameAssets()
