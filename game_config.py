@@ -7,6 +7,9 @@ SCREENHEIGHT = 14 * imageSize
 
 FPS = 60
 BLACK = (0, 0, 0)
+RED = (255, 0, 0)
+
+TANK_SPEED = imageSize // spriteSize
 
 SPAWN_STAR = {'star_0': [(spriteSize * 16), (spriteSize * 6), spriteSize, spriteSize],
               'star_1': [(spriteSize * 17), (spriteSize * 6), spriteSize, spriteSize],
