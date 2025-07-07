@@ -117,9 +117,11 @@ class LevelEditor:
     vert_lines = (gc.SCREEN_BORDER_RIGHT - gc.SCREEN_BORDER_LEFT) // (gc.imageSize)
     hor_lines = (gc.SCREEN_BORDER_BOTTOM - gc.SCREEN_BORDER_TOP) // (gc.imageSize)
     for i in range(vert_lines):
-      pygame.draw.line(window, gc.RED, (gc.SCREEN_BORDER_LEFT + (i * gc.imageSize), gc.SCREEN_BORDER_TOP), (gc.SCREEN_BORDER_LEFT + (i * gc.imageSize), gc.SCREEN_BORDER_BOTTOM))
+      pygame.draw.line(window, gc.RED, (gc.SCREEN_BORDER_LEFT + (i * gc.imageSize), gc.SCREEN_BORDER_TOP), 
+                       (gc.SCREEN_BORDER_LEFT + (i * gc.imageSize), gc.SCREEN_BORDER_BOTTOM))
     for i in range(hor_lines):
-      pygame.draw.line(window, gc.RED, (gc.SCREEN_BORDER_LEFT, gc.SCREEN_BORDER_TOP + (i * gc.imageSize)), (gc.SCREEN_BORDER_RIGHT, gc.SCREEN_BORDER_TOP + (i * gc.imageSize))) 
+      pygame.draw.line(window, gc.RED, (gc.SCREEN_BORDER_LEFT, gc.SCREEN_BORDER_TOP + (i * gc.imageSize)), 
+                       (gc.SCREEN_BORDER_RIGHT, gc.SCREEN_BORDER_TOP + (i * gc.imageSize))) 
           
   def create_level_matrix(self):
       rows = (gc.SCREEN_BORDER_BOTTOM - gc.SCREEN_BORDER_TOP) // (gc.imageSize // 2)
@@ -131,3 +133,6 @@ class LevelEditor:
             line.append(-1)
         matrix.append(line)
       return matrix
+  
+  def validate_level(self):
+    pass
