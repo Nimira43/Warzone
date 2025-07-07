@@ -77,6 +77,11 @@ class LevelEditor:
           if self.index >= len(self.inserts):
             self.index = self.index % len(self.inserts)
           self.insert_tile = self.inserts[self.index]
+        if event.key == pygame.K_RETURN:
+          self.validate_level()
+          self.all_levels.append(self.matrix)
+          self.level_data.save_level_data(self.all_levels)
+          self.active = False
 
   def update(self):
     pass
