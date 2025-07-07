@@ -95,6 +95,15 @@ class LevelEditor:
   def draw(self, window):
     window.blit(self.overlay_screen, (0, 0))
     self.draw_grid_to_screen(window)
+
+    for i, row in enumerate(self.matrix):
+      for j, tile in enumerate(row):
+        if tile == -1:
+          continue
+        else:
+          window.blit(self.tile_type[tile], (gc.SCREEN_BORDER_LEFT + (j * gc.imageSize // 2), 
+                                             gc.SCREEN_BORDER_TOP + (i * gc.imageSize // 2)))
+
     window.blit(self.icon_image, self.icon_rect)
     pygame.draw.rect(window, gc.GREEN, self.icon_rect, 1)
 
