@@ -15,6 +15,15 @@ class LevelEditor:
 
     self.overlay_screen = self.draw_screen()
     self.matrix = self.create_level_matrix()
+   
+    self.tile_type = {
+      432: self.assets.brick_tiles['small'],
+      482: self.assets.steel_tiles['small'],
+      483: self.assets.forest_tiles['small'],
+      484: self.assets.ice_tiles['small'],
+      533: self.assets.water_tiles['small_1'],
+      999: self.assets.flag['Phoenix_Alive']
+    }
 
     self.inserts = [
       [-1, -1, -1, -1],
@@ -32,15 +41,10 @@ class LevelEditor:
       [484, 484, 484, 484],
       [533, 533, 533, 533],
     ]
+
+    self.index = 0
+    self.insert_file = self.inserts[self.index]
     
-    self.tile_type = {
-      432: self.assets.brick_tiles['small'],
-      482: self.assets.steel_tiles['small'],
-      483: self.assets.forest_tiles['small'],
-      484: self.assets.ice_tiles['small'],
-      533: self.assets.water_tiles['small_1'],
-      999: self.assets.flag['Phoenix_Alive']
-    }
     self.icon_image = self.assets.tank_images['Tank_4']['Gold']['Up'][0]
     self.icon_rect = self.icon_image.get_rect(topleft = (gc.SCREEN_BORDER_LEFT, gc.SCREEN_BORDER_TOP))
 
