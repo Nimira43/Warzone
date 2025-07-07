@@ -12,6 +12,17 @@ class StartScreen:
     self.x, self.y = self.rect.topleft
     self.speed = gc.SCREEN_SCROLL_SPEED
 
+    self.options_positions = [
+      (4 * gc.imageSize, 7.75 * gc.imageSize),
+      (4 * gc.imageSize, 8.75 * gc.imageSize),
+      (4 * gc.imageSize, 9.75 * gc.imageSize),
+    ]
+
+    self.token_index = 0
+    self.token_image = self.assets.start_screen_token
+    self.token_rect = self.token_image.get_rect(topleft=self.options_positions[self.token_index])
+    self.start_screen_active = False
+
   def input(self):
     pass
 
