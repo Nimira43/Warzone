@@ -63,9 +63,16 @@ class StartScreen:
     self.token_index = self.token_index % len(self.options_positions)
     self.token_rect.topleft = self.options_positions[self.token_index]
 
-
   def _selected_option_action(self):
-    pass
+    if self.token_index == 0:
+      print('Start new one player game')
+      self.main.start_new_game(player1=True, player2=False)
+    elif self.token_index == 1:
+      print('Start new two player game')
+      self.main.start_new_game(player1=True, player2=True)
+    elif self.token_index == 2:
+      print('Start levle editor')
+      self.main.start_level_creator()
 
   def _animate_screen_into_position(self):
     pass
