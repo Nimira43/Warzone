@@ -54,7 +54,9 @@ class StartScreen:
     self.start_screen_active = True
 
   def draw(self, window):
-    pass
+    window.blit(self.image, self.rect)
+    if self.start_screen_active:
+      window.blit(self.token_image, self.token_rect)
 
   def _switch_options_main_menu(self, num):
     pass
