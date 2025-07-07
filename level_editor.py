@@ -7,8 +7,12 @@ class LevelEditor:
     self.main = main
     self.assets = assets
     self.active = True
-    self.level_data = None
+    self.level_data = LevelData()
     self.all_levels = []
+
+    for stage in self.level_data.level_data:
+      self.all_levels.append(stage)
+
     self.overlay_screen = self.draw_screen()
     self.matrix = self.create_level_matrix()
     # for row in self.matrix:
