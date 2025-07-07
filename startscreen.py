@@ -49,7 +49,9 @@ class StartScreen:
     return True
   
   def update(self):
-    pass
+    if self._animate_screen_into_position() == False:
+      return
+    self.start_screen_active = True
 
   def draw(self, window):
     pass
