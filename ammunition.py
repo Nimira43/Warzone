@@ -5,9 +5,9 @@ class Bullet(pygame.sprite.Sprite):
   def __init__(self, groups, owner, pos, dir, assets):
     super().__init__()
     self.assets = assets
-    self.groups = groups
-    self.tanks = self.groups['All_Tanks']
-    self.bullet_group = self.groups['Bullets']
+    self.group = groups
+    self.tanks = self.group['All_Tanks']
+    self.bullet_group = self.group['Bullets']
     self.xPos, self.yPos = pos
     self.direction = dir
     self.owner = owner
