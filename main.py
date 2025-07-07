@@ -3,6 +3,8 @@ import game_config as gc
 from game_assets import GameAssets
 from game import Game
 from leveleditor import LevelEditor
+from levels import LevelData
+from startscreen import StartScreen
 
 class Main:
   def __init__(self):
@@ -13,11 +15,15 @@ class Main:
     self.Clock = pygame.time.Clock()
     self.run = True
     self.assets = GameAssets()
+    self.levels = LevelData()
 
+    self.start_screen = StartScreen(self, self.assets)
+    self.start_screen_active = True
+ 
     self.game_on = False
     self.game = Game(self, self.assets, True, True)
 
-    self.level_editor_on = True
+    self.level_editor_on = False
     self.level_creator = LevelEditor(self, self.assets)
 
   def run_game(self):
@@ -29,9 +35,11 @@ class Main:
   def input(self):
     if self.game_on:
       self.game.input()
+    if self.start_screen_active:
+      self.start_screen_active = self.start_screen.input()
     if self.level_editor_on:
       self.level_creator.input()
-    if not self.game_on and not self.level_editor_on:
+    if not self.game_on and not self.level_editor_on and not self.start_screen_active:
       for event in pygame.event.get():
         if event.type == pygame.QUIT:
           self.run = False
