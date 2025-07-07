@@ -4,7 +4,7 @@ import csv
 
 class LevelData:
   def __init__(self):
-    self.leveldata = self.load_level_data()
+    self.level_data = self.load_level_data()
 
   def load_level_data(self):
     gameStages = []
