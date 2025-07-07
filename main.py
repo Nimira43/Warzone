@@ -46,6 +46,9 @@ class Main:
 
   def update(self):
     self.Clock.tick(gc.FPS)
+    if self.start_screen_active:
+      self.start_screen.update()
+
     if self.game_on:
       self.game.update()
     if self.level_editor_on:
@@ -53,11 +56,19 @@ class Main:
 
   def draw(self):
     self.screen.fill(gc.BLACK)
+    if self.start_screen_active:
+      self.start_screen.draw(self.screen)
     if self.game_on:
       self.game.draw(self.screen)
     if self.level_editor_on:
       self.level_creator.draw(self.screen)
     pygame.display.update()
+
+  def start_new_game(self, player1, player2):
+    pass
+
+  def start_level_creator(self):
+    pass
 
 if __name__== '__main__':
   warzone = Main()
