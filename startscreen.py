@@ -75,7 +75,15 @@ class StartScreen:
       self.main.start_level_creator()
 
   def _animate_screen_into_position(self):
-    pass
+    if self.y == self.end_y: 
+      return True
+
+    self.y -= self.speed
+    if self.y < self.end_y:
+      self.y = self.end_y
+    self.rect.topleft = (0, self.y)
+    return False
 
   def _complete_screen_position(self):
-    pass
+    self.y = self.end_y
+    self.rect.topleft = (0, self.y)
