@@ -43,7 +43,7 @@ class LevelEditor:
     ]
 
     self.index = 0
-    self.insert_file = self.inserts[self.index]
+    self.insert_tile = self.inserts[self.index]
     
     self.icon_image = self.assets.tank_images['Tank_4']['Gold']['Up'][0]
     self.icon_rect = self.icon_image.get_rect(topleft = (gc.SCREEN_BORDER_LEFT, gc.SCREEN_BORDER_TOP))
@@ -86,6 +86,11 @@ class LevelEditor:
   def update(self):
     icon_grid_pos_col = (self.icon_rect.left - gc.SCREEN_BORDER_LEFT // (gc.imageSize // 2))
     icon_grid_pos_row = (self.icon_rect.top - gc.SCREEN_BORDER_TOP // (gc.imageSize // 2))
+
+    self.matrix[icon_grid_pos_row][icon_grid_pos_col] = self.insert_tile[0]
+    self.matrix[icon_grid_pos_row][icon_grid_pos_col + 1] = self.insert_tile[1]
+    self.matrix[icon_grid_pos_row + 1][icon_grid_pos_col] = self.insert_tile[2]
+    self.matrix[icon_grid_pos_row + 1][icon_grid_pos_col + 1] = self.insert_tile[3]
 
   def draw(self, window):
     window.blit(self.overlay_screen, (0, 0))
