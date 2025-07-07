@@ -83,19 +83,19 @@ class GameAssets:
     else:
       return 'Right'
   
-  def _get_specified_images(self, spritesheet, img_coord_dict, color, transparent=True):
+  def _get_specified_images(self, spritesheet, img_coord_dict, colour, transparent=True):
     image_dictionary = {}
     for key, pos in img_coord_dict.items():
-      image = self.get_image(spritesheet, pos[0], pos[1], pos[2], pos[3], color, transparent)
+      image = self.get_image(spritesheet, pos[0], pos[1], pos[2], pos[3], colour, transparent)
       image_dictionary.setdefault(key, image)
     return image_dictionary
   
-  def get_image(self, spritesheet, xpos, ypos, width, height, color, transparent=True):
+  def get_image(self, spritesheet, xpos, ypos, width, height, colour, transparent=True):
     surface = pygame.Surface((width, height))
-    surface.fill(color)
+    surface.fill(colour)
     surface.blit(spritesheet, (0, 0), (xpos, ypos, width, height))
     if transparent:
-      surface.set_colorkey(color)
+      surface.set_colorkey(colour)
     surface = self.scale_image(surface, gc.spriteScale)
     return surface
 
