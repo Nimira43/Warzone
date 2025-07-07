@@ -16,7 +16,7 @@ class LevelData:
           for j, tile in enumerate(row):
             level_data[i].append(int(tile))
       gameStages.append(level_data)
-    return
+    return gameStages
 
   def save_level_data(self, level_data):
     number = len(level_data)
