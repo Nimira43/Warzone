@@ -60,6 +60,10 @@ class LevelEditor:
           self.icon_rect.x += gc.imageSize
           if self.icon_rect.x >= gc.SCREEN_BORDER_RIGHT:
             self.icon_rect.x = gc.SCREEN_BORDER_RIGHT - gc.imageSize
+        if event.key == pygame.K_a or event.key == pygame.K_LEFT:
+          self.icon_rect.x -= gc.imageSize
+          if self.icon_rect.x >= gc.SCREEN_BORDER_LEFT:
+            self.icon_rect.x = gc.SCREEN_BORDER_LEFT
 
   def update(self):
     pass
