@@ -84,7 +84,8 @@ class LevelEditor:
           self.active = False
 
   def update(self):
-    pass
+    icon_grid_pos_col = (self.icon_rect.left - gc.SCREEN_BORDER_LEFT // (gc.imageSize // 2))
+    icon_grid_pos_row = (self.icon_rect.top - gc.SCREEN_BORDER_TOP // (gc.imageSize // 2))
 
   def draw(self, window):
     window.blit(self.overlay_screen, (0, 0))
