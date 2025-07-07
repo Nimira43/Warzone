@@ -72,6 +72,11 @@ class LevelEditor:
           self.icon_rect.y -= gc.imageSize
           if self.icon_rect.y <= gc.SCREEN_BORDER_TOP:
             self.icon_rect.y = gc.SCREEN_BORDER_TOP
+        if event.key == pygame.K_SPACE:
+          self.index += 1
+          if self.index >= len(self.inserts):
+            self.index = self.index % len(self.inserts)
+          self.insert_tile = self.inserts[self.index]
 
   def update(self):
     pass
