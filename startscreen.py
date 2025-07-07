@@ -24,8 +24,30 @@ class StartScreen:
     self.start_screen_active = False
 
   def input(self):
-    pass
-
+    for event in pygame.event.get():
+      if event.type == pygame.QUIT:
+        self.main.run = False
+        return False
+      
+      if event.type == pygame.KEYDOWN:
+        if event.key == pygame.K_ESCAPE:
+          self.main.run = False
+          return False
+        
+        if self.start_screen_active == False:
+          self._complete_screen_position()
+          return True
+        
+        if event.key == pygame.K_UP or event.key == pygame.K_w:
+          self._switch_options_main_menu(-1)
+        
+        if event.key == pygame.K_DOWN or event.key == pygame.K_s:
+          self._switch_options_main_menu(+1)
+        
+        if event.key == pygame.K_RETURN or event.key == pygame.K_SPACE:
+          self._selected_option_action(-1)
+    return True
+  
   def update(self):
     pass
 
