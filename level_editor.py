@@ -15,8 +15,23 @@ class LevelEditor:
 
     self.overlay_screen = self.draw_screen()
     self.matrix = self.create_level_matrix()
-    # for row in self.matrix:
-    #   print(row)
+
+    self.inserts = [
+      [-1, -1, -1, -1],
+      [-1, 432, -1, 432],
+      [-1, -1, 432, 432],
+      [432, -1, 432, -1],
+      [432, 432, -1, -1],
+      [432, 432, 432, 432],
+      [-1, 482, -1, 482],
+      [-1, -1, 482, 482],
+      [482, -1, 482, -1],
+      [482, 482, -1, -1],
+      [482, 482, 482, 482],
+      [483, 483, 483, 483],
+      [484, 484, 484, 484],
+      [533, 533, 533, 533],
+    ]
     
     self.tile_type = {
       432: self.assets.brick_tiles['small'],
