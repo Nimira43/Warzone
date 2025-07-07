@@ -59,7 +59,10 @@ class StartScreen:
       window.blit(self.token_image, self.token_rect)
 
   def _switch_options_main_menu(self, num):
-    pass
+    self.token_index += num
+    self.token_index = self.token_index % len(self.options_positions)
+    self.token_rect.topleft = self.options_positions[self.token_index]
+
 
   def _selected_option_action(self):
     pass
