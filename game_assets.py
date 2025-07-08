@@ -6,7 +6,7 @@ class GameAssets:
     self.start_screen = self.load_ind_img('start_screen', True, (gc.SCREENWIDTH, gc.SCREENHEIGHT))
     self.start_screen_token = self.load_ind_img('token', True, (gc.imageSize, gc.imageSize))        
     
-    self.spritesheet = self.load_ind_img('BattleCity')        
+    self.spritesheet = self.load_ind_img('warzone')        
     self.number_image_black_white = self.load_ind_img('numbers_black_white')        
     self.number_image_black_orange = self.load_ind_img('numbers_black_orange')        
     

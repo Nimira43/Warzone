@@ -24,7 +24,7 @@ class LevelData:
     number = len(level_data)
     for i in range(number):
       num = i + 1 if len(str(i + 1)) > 1 else '0' + str(i + 1)
-      with open(f'levels/BattleCityLevel{str(num)}.csv', 'w', newline='') as csvFile:
+      with open(f'levels/warzone{str(num)}.csv', 'w', newline='') as csvFile:
         writer = csv.writer(csvFile, delimiter=',')
         for row in level_data[i]:
           writer.writerow(row)
