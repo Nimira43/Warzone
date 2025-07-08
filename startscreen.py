@@ -45,7 +45,7 @@ class StartScreen:
           self._switch_options_main_menu(+1)
         
         if event.key == pygame.K_RETURN or event.key == pygame.K_SPACE:
-          self._selected_option_action(-1)
+          self._selected_option_action()
     return True
   
   def update(self):
