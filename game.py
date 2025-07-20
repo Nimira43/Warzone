@@ -9,7 +9,8 @@ class Game:
     self.main = main
     self.assets = assets
 
-    self.groups = {'All_Tanks': pygame.sprite.Group(), 
+    self.groups = {'Player_Tanks': pygame.sprite.Group(),
+                   'All_Tanks': pygame.sprite.Group(), 
                    'Bullets': pygame.sprite.Group()}
     self.player1_active = player1
     self.player2_active = player2
