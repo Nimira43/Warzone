@@ -16,8 +16,6 @@ class LevelData:
           for j, tile in enumerate(row):
             level_data[i].append(int(tile))
       gameStages.append(level_data)
-      print(f"Loaded level: {stage}")
-    print(f"Total levels loaded: {len(gameStages)}")
     return gameStages
 
   def save_level_data(self, level_data):
