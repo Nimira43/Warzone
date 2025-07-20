@@ -25,6 +25,11 @@ class Game:
       self.player2 = PlayerTank(self, self.assets, self.groups, gc.Pl2_position, 'Up', 'Green', 1)
 
     self.enemies = 20
+    self.enemy_tank_spawn_timer = gc.TANK_SPAWNING_TIME
+    self.enemy_spawn_positions = [gc.Pc1_position, gc.Pc2_position, gc.Pc3_position]
+
+    self.create_new_stage()
+    self.end_game = False
 
   def input(self):
     keypressed = pygame.key.get_pressed()
@@ -61,3 +66,15 @@ class Game:
       for dictKey in self.groups.keys():
         for item in self.groups[dictKey]:
           item.draw(window)
+
+  def create_new_stage(self):
+    pass
+
+  def load_level_data(self, level):
+    pass
+
+  def generate_spawn_queue(self):
+    pass
+
+  def spawn_enemy_tanks(self):
+    pass
