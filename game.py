@@ -17,11 +17,12 @@ class Game:
 
     self.hud = GameHud(self, self.assets)
     self.level_num = 1
+    self.data = self.main_levels
     
     if self.player1_active: 
-      self.player1 = PlayerTank(self, self.assets, self.groups, (200, 200), 'Up', 'Gold', 0)
+      self.player1 = PlayerTank(self, self.assets, self.groups, gc.Pl1_position, 'Up', 'Gold', 0)
     if self.player2_active: 
-      self.player2 = PlayerTank(self, self.assets, self.groups, (400, 200), 'Up', 'Green', 1)
+      self.player2 = PlayerTank(self, self.assets, self.groups, gc.Pl2_position, 'Up', 'Green', 1)
 
     self.enemies = 20
 
