@@ -116,3 +116,16 @@ Tank_Critrea = {
     'level_2': {'image': 6, 'health': 1, 'speed': 0.5, 'cooldown': 1, 'power': 2, 'score': 300},
     'level_3': {'image': 7, 'health': 4, 'speed': 0.5, 'cooldown': 1, 'power': 2, 'score': 400},
 }
+
+Tank_spawn_queue = {'queue_0': [90, 10, 0, 0],
+                    'queue_1': [80, 20, 0, 0],
+                    'queue_2': [70, 30, 0, 0],
+                    'queue_3': [60, 30, 10, 0],
+                    'queue_4': [50, 30, 20, 0],
+                    'queue_5': [40, 30, 30, 0],
+                    'queue_6': [30, 30, 30, 10],
+                    'queue_7': [20, 30, 30, 20],
+                    'queue_8': [10, 30, 30, 30],
+                    'queue_9': [10, 20, 40, 30],
+                    'queue_10': [10, 10, 50, 30],
+                    'queue_11': [0, 10, 50, 40],}
