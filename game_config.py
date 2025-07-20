@@ -24,6 +24,12 @@ GREEN = (0, 255, 0)
 
 TANK_SPEED = imageSize // spriteSize
 TANK_PARALYSIS = 2000
+TANK_SPAWNING_TIME = 3000
+Pl1_position = (SCREEN_BORDER_LEFT + imageSize // 2 * 8, SCREEN_BORDER_TOP + imageSize // 2 * 24)
+Pl2_position = (SCREEN_BORDER_LEFT + imageSize // 2 * 16, SCREEN_BORDER_TOP + imageSize // 2 * 24)
+Pc1_position = (SCREEN_BORDER_LEFT + imageSize // 2 * 12, SCREEN_BORDER_TOP + imageSize // 2 * 0)
+Pc1_position = (SCREEN_BORDER_LEFT + imageSize // 2 * 24, SCREEN_BORDER_TOP + imageSize // 2 * 0)
+Pc1_position = (SCREEN_BORDER_LEFT + imageSize // 2 * 0, SCREEN_BORDER_TOP + imageSize // 2 * 0)
 
 SPAWN_STAR = {'star_0': [(spriteSize * 16), (spriteSize * 6), spriteSize, spriteSize],
               'star_1': [(spriteSize * 17), (spriteSize * 6), spriteSize, spriteSize],
