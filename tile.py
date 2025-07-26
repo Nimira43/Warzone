@@ -40,6 +40,15 @@ class BrickTile(TileType):
     if bullet.direction == 'Left':
       self.image = self.images['small_left']
       self._get_rect_and_size((self.xPos, self.yPos))
+    elif bullet.direction == 'Right':
+      self.image = self.images['small_right']
+      self._get_rect_and_size((self.xPos + self.width // 2, self.yPos))
+    elif bullet.direction == 'Up':
+      self.image = self.images['small_top']
+      self._get_rect_and_size((self.xPos, self.yPos))
+    elif bullet.direction == 'Down':
+      self.image = self.images['small_bot']
+      self._get_rect_and_size((self.xPos, self.yPos + self.height // 2))
 
 class SteelTile(TileType):
   def __init__(self, pos, group, map_tile):
