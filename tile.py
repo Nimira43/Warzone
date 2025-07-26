@@ -18,7 +18,11 @@ class TileType(pygame.sprite.Sprite):
     pass
 
 class BrickTile(TileType):
-  pass
+  def __init__(self, pos, group, map_tile):
+    pass
+
+  def hit_by_bullet(self, bullet):
+    pass
 
 class SteelTile(TileType):
   pass
