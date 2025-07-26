@@ -27,6 +27,8 @@ class BrickTile(TileType):
     super().__init__(pos, group, map_tile)
     self.health = 2
     self.name = 'Brick'
+    self.image = self.images['small']
+    self._get_rect_and_size((self.xPos, self.yPos))
 
   def hit_by_bullet(self, bullet):
     pass
