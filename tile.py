@@ -63,15 +63,24 @@ class SteelTile(TileType):
 
 class ForestTile(TileType):
   def __init__(self, pos, group, map_tile):
-    pass
+    super().__init__(pos, group, map_tile)
+    
+    self.image = self.images['small']
+    self._get_rect_and_size((self.xPos, self.yPos))
 
 class IceTile(TileType):
   def __init__(self, pos, group, map_tile):
-    pass
+    super().__init__(pos, group, map_tile)
 
 class WaterTile(TileType):
   def __init__(self, pos, group, map_tile):
-    pass
+    super().__init__(pos, group, map_tile)
 
+    self.image = self.images['small_1']
+    self._get_rect_and_size((self.xPos, self.yPos))
+
+    self.frame_index = 0
+    self.timer = pygame.time.get_ticks()
+  
   def update(self):
     pass
