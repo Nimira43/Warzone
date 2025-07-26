@@ -21,10 +21,12 @@ class Main:
     self.start_screen_active = True
  
     self.game_on = False
-    self.game = Game(self, self.assets, True, True)
+    # self.game = Game(self, self.assets, True, True)
+    self.game = None
 
     self.level_editor_on = False
-    self.level_creator = LevelEditor(self, self.assets)
+    # self.level_creator = LevelEditor(self, self.assets)
+    self.level_creator = None
 
   def run_game(self):
     while self.run:
@@ -51,6 +53,14 @@ class Main:
 
     if self.game_on:
       self.game.update()
+
+    if self.game:
+      if self.game.end_game == True:
+        self.start_screen = StartScreen(self.self.assets)
+        self.start_screen_active = True
+        self.game_on = False
+        self.game = None
+    
     if self.level_editor_on:
       self.level_creator.update()
 
