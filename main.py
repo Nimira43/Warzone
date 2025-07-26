@@ -82,7 +82,10 @@ class Main:
     pygame.display.update()
 
   def start_new_game(self, player1, player2):
-    pass
+    self.game_on = True
+    self.game = Game(self, self.assets, player1, player2)
+    self.start_screen_active = False
+    return
 
   def start_level_creator(self):
     pass
