@@ -20,7 +20,7 @@ class TileType(pygame.sprite.Sprite):
     pass
 
   def draw(self, window):
-    pass
+    window.blit(self.image, self.rect)
 
 class BrickTile(TileType):
   def __init__(self, pos, group, map_tile):
