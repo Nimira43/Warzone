@@ -64,6 +64,13 @@ class Main:
     if self.level_editor_on:
       self.level_creator.update()
 
+    if self.level_creator:
+      if self.level_creator.active == False:
+        self.start_screen = StartScreen(self, self.assets)
+        self.start_screen_active = True
+        self.level_editor_on = False
+        self.level_creator = None
+
   def draw(self):
     self.screen.fill(gc.BLACK)
     if self.start_screen_active:
