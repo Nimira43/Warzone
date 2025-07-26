@@ -3,7 +3,11 @@ import game_config as gc
 
 class TileType(pygame.sprite.Sprite):
   def __init__(self, pos, group, map_tile):
-    pass
+    super().__init__(group)
+    self.group = group
+    self.images = map_tile
+    self.xPos = pos[0]
+    self.yPos = pos[1]
 
   def update(self):
     pass
