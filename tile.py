@@ -31,7 +31,15 @@ class BrickTile(TileType):
     self._get_rect_and_size((self.xPos, self.yPos))
 
   def hit_by_bullet(self, bullet):
-    pass
+    bullet.update_owner()
+    bullet.kill()
+    self.health -= 1
+    if self.health <= 0:
+      self.kill()
+      return
+    if bullet.direction == 'Left':
+      self.image = self.images['small_left']
+      self._get_rect_and_size((self.xPos, self.yPos))
 
 class SteelTile(TileType):
   def __init__(self, pos, group, map_tile):
