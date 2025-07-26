@@ -25,7 +25,11 @@ class BrickTile(TileType):
     pass
 
 class SteelTile(TileType):
-  pass
+  def __init__(self, pos, group, map_tile):
+    pass
+
+  def hit_by_bullet(self, bullet):
+    pass
 
 class ForestTile(TileType):
   pass
