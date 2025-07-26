@@ -36,7 +36,8 @@ class ForestTile(TileType):
     pass
 
 class IceTile(TileType):
-  pass
+  def __init__(self, pos, group, map_tile):
+    pass
 
 class WaterTile(TileType):
   pass
