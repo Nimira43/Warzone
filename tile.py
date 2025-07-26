@@ -83,4 +83,8 @@ class WaterTile(TileType):
     self.timer = pygame.time.get_ticks()
   
   def update(self):
-    pass
+    if pygame.time.get_ticks() - self.timer >= 500:
+      self.frame_index = 1 if self.frame_index == 0 else 0
+
+      self.timer = pygame.time.get_ticks()
+      self.image = self.images[f'small_{self.frame_index + 1}']
