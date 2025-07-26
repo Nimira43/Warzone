@@ -72,7 +72,9 @@ class Game:
       if key == 'Player_Tanks':
         continue
       value.empty()
-      
+
+    self.current_level_data
+
 
   def load_level_data(self, level):
     pass
