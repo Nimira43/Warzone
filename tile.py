@@ -52,7 +52,10 @@ class BrickTile(TileType):
 
 class SteelTile(TileType):
   def __init__(self, pos, group, map_tile):
-    pass
+    super().__init__(pos, group, map_tile)
+    self.name = 'Steel'
+    self.image = self.images['small']
+    self._get_rect_and_size((self.xPos, self.yPos))
 
   def hit_by_bullet(self, bullet):
     pass
