@@ -68,7 +68,11 @@ class Game:
           item.draw(window)
 
   def create_new_stage(self):
-    pass
+    for key, value in self.groups.items():
+      if key == 'Player_Tanks':
+        continue
+      value.empty()
+      
 
   def load_level_data(self, level):
     pass
