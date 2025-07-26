@@ -40,4 +40,8 @@ class IceTile(TileType):
     pass
 
 class WaterTile(TileType):
-  pass
+  def __init__(self, pos, group, map_tile):
+    pass
+
+  def update(self):
+    pass
