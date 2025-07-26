@@ -88,7 +88,9 @@ class Main:
     return
 
   def start_level_creator(self):
-    pass
+    self.level_editor_on = True
+    self.level_creator = LevelEditor(self, self.assets)
+    self.start_screen = False
 
 if __name__== '__main__':
   warzone = Main()
