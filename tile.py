@@ -24,7 +24,9 @@ class TileType(pygame.sprite.Sprite):
 
 class BrickTile(TileType):
   def __init__(self, pos, group, map_tile):
-    pass
+    super().__init__(pos, group, map_tile)
+    self.health = 2
+    self.name = 'Brick'
 
   def hit_by_bullet(self, bullet):
     pass
