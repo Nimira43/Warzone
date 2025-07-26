@@ -32,7 +32,8 @@ class SteelTile(TileType):
     pass
 
 class ForestTile(TileType):
-  pass
+  def __init__(self, pos, group, map_tile):
+    pass
 
 class IceTile(TileType):
   pass
