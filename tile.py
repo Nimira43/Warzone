@@ -58,7 +58,8 @@ class SteelTile(TileType):
     self._get_rect_and_size((self.xPos, self.yPos))
 
   def hit_by_bullet(self, bullet):
-    pass
+    bullet.update_owner()
+    bullet.kill()
 
 class ForestTile(TileType):
   def __init__(self, pos, group, map_tile):
