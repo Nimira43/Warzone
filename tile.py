@@ -13,7 +13,8 @@ class TileType(pygame.sprite.Sprite):
     pass
 
   def _get_rect_and_size(self, position):
-    pass
+    self.rect = self.image.get_rect(topleft = position)
+    self.width, self.height = self.image.get_size()
 
   def hit_by_bullet(self, bullet):
     pass
