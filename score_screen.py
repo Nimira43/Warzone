@@ -58,7 +58,12 @@ class ScoreScreen:
     pass
 
   def number_image(self, score, number_colour):
-    pass
+    num = str(score)
+    length = len(num)
+    score_surface = pygame.Surface(gc.imageSize // 2 * length, gc.imageSize // 2)
+    for index, number in enumerate(num):
+      score_surface.blit(number_colour[int(number)], (gc.imageSize // 2 * index, 0))
+    return score_surface
 
   def update_player_score_images(self):
     pass
