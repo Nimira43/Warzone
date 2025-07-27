@@ -37,7 +37,11 @@ class Fade:
       ycoord -= speed
       if ycoord < end_pos:
         ycoord = end_pos
-        
+    elif start_pos < end_pos:
+      ycoord += speed
+      if ycoord > end_pos:
+        ycoord = end_pos
+    return ycoord
 
   def create_stage_image(self):
     surface = pygame.Surface((self.stage_pic_width + (self.num_pic_width * 3), self.stage_pic_height))
