@@ -147,7 +147,11 @@ class Game:
       line = []
       for j, tile in enumerate(row):
         pos = (gc.SCREEN_BORDER_LEFT + (j * gc.imageSize // 2), gc.SCREEN_BORDER_TOP + (i * gc.imageSize // 2))
-        
+      if int(tile) < 0:
+        line.append('   ')
+      elif int(tile) == 432:
+        line.append(f'{tile}')
+        map.tile = BrickTile()
 
   def generate_spawn_queue(self):
     pass
