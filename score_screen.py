@@ -2,7 +2,7 @@ import pygame
 import game_config as gc
 
 class ScoreScreen:
-  def __init(self, game, assets):
+  def __init__(self, game, assets):
     self.game = game
     self.assets = assets
     self.white_nums = self.assets.number_black_white
