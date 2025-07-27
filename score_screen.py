@@ -104,7 +104,11 @@ class ScoreScreen:
     self.update_player_score_images()
 
   def clear_for_new_stage(self):
-    pass
+    self.p1_kill_list = []
+    self.p2_kill_list = []
+
+    self.pl1_score_values = {'line1': [0, 0], 'line2': [0, 0], 'line3': [0, 0], 'line4': [0, 0], 'total': 0}
+    self.pl2_score_values = {'line1': [0, 0], 'line2': [0, 0], 'line3': [0, 0], 'line4': [0, 0], 'total': 0}
 
   
 
