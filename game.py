@@ -110,9 +110,11 @@ class Game:
           continue
         if self.fade.fade_active == True and (dictKey == 'All_tanks' or dictKey == 'Player_Tank'):
           continue
-        
         for item in self.groups[dictKey]:
           item.draw(window)
+      
+      if self.fade.fade_active:
+        self.fade.draw(window)
 
   def create_new_stage(self):
     for key, value in self.groups.items():
