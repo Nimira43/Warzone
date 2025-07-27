@@ -84,7 +84,13 @@ class ScoreScreen:
     self._create_top_score_and_stage_number_images()
 
   def generate_tank_kill_images(self, x1, x2, pl_dict):
-    pass
+    yPos = [12.5, 15, 17.5, 20]
+    size = gc.imageSize // 2
+    tank_num_imgs = {}
+
+    for i in range(4):
+      tank_num_imgs[f'line{i + 1}'] = []
+      tank_num_imgs[f'line{i + 1}'].append(self.number_image(pl_dict[f'line{i + 1}'][0], self.white_nums))
 
   def update_score(self, score, player):
     score_dict = {100: 'line1', 200: 'line2', 300: 'line3', 400: 'line4'}
