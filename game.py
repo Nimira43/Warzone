@@ -46,6 +46,7 @@ class Game:
 
     self.create_new_stage()
     self.end_game = False
+    self.game_on = False
 
   def input(self):
     keypressed = pygame.key.get_pressed()
