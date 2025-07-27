@@ -94,6 +94,8 @@ class Game:
       self.level_complete = True
       self.level_transition_timer = pygame.time.get_ticks()
 
+    if self.level_complete:
+      if pygame.time.get_ticks() - self.level_transition_timer >= gc.TRans
     
 
   def draw(self, window):
