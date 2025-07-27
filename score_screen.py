@@ -64,7 +64,8 @@ class ScoreScreen:
     pass
 
   def _create_top_score_and_stage_number_images(self):
-    pass
+    self.hi_score_nums_total = self.number_image(self.top_score, self.orange_nums)
+    self.hi_score_nums_rect = self.hi_score_nums_total.get_rect(topleft=(gc.imageSize // 2 * 19, gc.imageSize // 2 * 4))
 
   def update_basic_info(self, top_score, stage_number):
     pass
