@@ -17,6 +17,10 @@ class Fade:
     self.top_rect_start_y = self.top_rect.bottom
     self.top_rect_end_y = gc.SCREENHEIGHT // 2
     self.top_y = self.top_rect.bottom
+    self.bot_rect = pygame.Rect(0, gc.SCREENHEIGHT, gc. SCREENWIDTH, gc.SCREENHEIGHT // 2)
+    self.bot_rect_start_y = self.bot_rect.top
+    self.bot_rect_end_y = gc.SCREENHEIGHT // 2
+    self.bot_y = self.bot_rect.top
 
 
   def update(self):
