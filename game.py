@@ -141,9 +141,13 @@ class Game:
     if self.player2_active:
       self.player2.new_stage_spawn(gc.Pl2_position)
 
-
   def load_level_data(self, level):
-    pass
+    self.grid = []
+    for i, row in enumerate(level):
+      line = []
+      for j, tile in enumerate(row):
+        pos = (gc.SCREEN_BORDER_LEFT + (j * gc.imageSize // 2), gc.SCREEN_BORDER_TOP + (i * gc.imageSize // 2))
+        
 
   def generate_spawn_queue(self):
     pass
