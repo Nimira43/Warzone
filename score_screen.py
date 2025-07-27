@@ -110,5 +110,8 @@ class ScoreScreen:
     self.pl1_score_values = {'line1': [0, 0], 'line2': [0, 0], 'line3': [0, 0], 'line4': [0, 0], 'total': 0}
     self.pl2_score_values = {'line1': [0, 0], 'line2': [0, 0], 'line3': [0, 0], 'line4': [0, 0], 'total': 0}
 
+    self.pl_tank_num_imgs, self.p1_tank_score_imgs = self.generate_tank_kill_images(14, 7, self. pl1_score_values)
+    self.p2_tank_num_imgs, self.p2_tank_score_imgs = self.generate_tank_kill_images(20, 25, self. pl2_score_values)
+
   
 
