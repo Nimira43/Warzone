@@ -60,6 +60,14 @@ class ScoreScreen:
     new_img = gc.imageSize // 2
     surface.blit(self.images['hiScore'], (new_img * 8, new_img * 4))
     surface.blit(self.images['stage'], (new_img * 12, new_img * 6))
+
+    arrow_left = self.images['arrow']
+    arrow_right = pygame.transform.flip(arrow_left, True, False)
+
+    if self.game.player1_active:
+      surface.blit(self.images['player1'], (new_img * 3, new_img * 8))
+    if self.game.player2_active:
+      surface.blit(self.images['player2'], (new_img * 21, new_img * 8))
     
 
   def number_image(self, score, number_colour):
