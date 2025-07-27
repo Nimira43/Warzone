@@ -15,7 +15,7 @@ class Bullet(pygame.sprite.Sprite):
     self.image = self.images[self.direction]
     self.rect = self.image.get_rect(center = (self.xPos, self.yPos))
     self.mask = pygame.mask.from_surface(self.image)
-    # self.mask_image = self.mask.to_surface()
+   
     self.bullet_group.add(self)
 
   def update(self):
@@ -23,6 +23,7 @@ class Bullet(pygame.sprite.Sprite):
     self.collide_edge_of_screen()
     self.collide_with_tank()
     self.collision_with_bullet()
+    self.collision_with_obstacle()
 
   def draw(self, window):
     window.blit(self.image, self.rect)
