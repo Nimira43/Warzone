@@ -79,7 +79,9 @@ class ScoreScreen:
     self.stage_num_rect = self.stage_num.get_rect(topleft=(gc.imageSize // 2 * 19, gc.imageSize // 2 * 6))
 
   def update_basic_info(self, top_score, stage_number):
-    pass
+    self.top_score = top_score
+    self.stage = stage_number
+    self._create_top_score_and_stage_number_images()
 
   def generate_tank_kill_images(self, x1, x2, pl_dict):
     pass
