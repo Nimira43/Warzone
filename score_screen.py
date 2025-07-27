@@ -87,7 +87,21 @@ class ScoreScreen:
     pass
 
   def update_score(self, score, player):
-    pass
+    score_dict = {100: 'line1', 200: 'line2', 300: 'line3', 400: 'line4'}
+
+    if player == 'player1':
+      self.pl1_score_values[score_dict[score]][0] += 1
+      self.pl1_score_values[score_dict[score]][1] += score
+      self.pl1_score_values['total'] += 1
+      self.p1_score += score
+      self.p1_tank_num_imgs, self.p1_tank_score_imgs = self.generate_tank_kill_images(14, 7, self.pl1_score_values)
+    else:
+      self.pl2_score_values[score_dict[score]][0] += 1
+      self.pl2_score_values[score_dict[score]][1] += score
+      self.pl2_score_values['total'] += 1
+      self.p2_score += score
+      self.p2_tank_num_imgs, self.p2_tank_score_imgs = self.generate_tank_kill_images(20, 25, self.pl2_score_values)
+    self.update_player_score_images()
 
   def clear_for_new_stage(self):
     pass
