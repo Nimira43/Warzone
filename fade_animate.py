@@ -32,6 +32,8 @@ class Fade:
   def draw(self, window):
     pygame.draw.rect(window, gc.GREY, self.top_rect)
     pygame.draw.rect(window, gc.GREY, self.bot_rect)
+    if self.transition:
+      window.blit(self.stage_image, self.stage_image_rect)
 
   def move_y_fade(self, ycoord, start_pos, end_pos, speed):
     if start_pos > end_pos:
