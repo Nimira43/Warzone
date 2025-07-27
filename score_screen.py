@@ -69,6 +69,13 @@ class ScoreScreen:
     if self.game.player2_active:
       surface.blit(self.images['player2'], (new_img * 21, new_img * 8))
     
+    for num, yPos in enumerate([12.5, 15, 17.5, 20]):
+      if self.game.player1_active:
+        surface.blit(self.image['pts'], (new_img * 8, new_img * yPos))
+        surface.blit(arrow_left, (new_img * 14, new_img * yPos))
+      if self.game.player2_active:
+        surface.blit(self.image['pts'], (new_img * 26, new_img * yPos))
+        surface.blit(arrow_right, (new_img * 17, new_img * yPos))
 
   def number_image(self, score, number_colour):
     num = str(score)
