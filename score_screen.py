@@ -76,6 +76,10 @@ class ScoreScreen:
       if self.game.player2_active:
         surface.blit(self.image['pts'], (new_img * 26, new_img * yPos))
         surface.blit(arrow_right, (new_img * 17, new_img * yPos))
+      surface.blit(self.assets.tank_images[f'Tank_{num + 4}']['Silver']['Up'][0], (new_img * 15, new_img * (yPos - 0.5)))
+    
+    surface.blit(self.images['total'], (new_img * 6, new_img * 22))
+    return surface
 
   def number_image(self, score, number_colour):
     num = str(score)
