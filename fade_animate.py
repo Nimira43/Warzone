@@ -48,6 +48,20 @@ class Fade:
         self.fade_out = True
         self.transition = False
 
+    elif self.fade_out:
+      self.top_y = self.move_y_fade(self.top_y, self.top_rect_end_y, self.top_rect_start_y, self.speed)
+      self.top_rect.bottom = self.top_y
+      self.bot_y = self.move_y_fade(self.bot_y, self.bot_rect_end_y, self.bot_rect_start_y, self.speed)
+      self.bot_rect.top = self.bot_y
+
+      if self.top_rect.bottom == self.top_rect_start_y and self.bot_rect.top == self.bot_rect_start_y:
+        self.fade_in = True
+        self.fade_out = False
+        self.transition = False
+        self.fade_active = False
+        self.game.game_on = True
+        return
+
   def draw(self, window):
     pygame.draw.rect(window, gc.GREY, self.top_rect)
     pygame.draw.rect(window, gc.GREY, self.bot_rect)
