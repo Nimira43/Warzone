@@ -74,9 +74,21 @@ class Game:
 
   def update(self):
     self.hud.update()
+
+    if self.fade.fade_active:
+      self.fade.update()
+      if not self.fade.fade_active:
+        for tank in self.groups['All_Tanks']:
+          tank.spawn_timer = pygame.time.get_ticks()
+      return
+
     for dictKey in self.groups.keys():
+      if dictKey == 'Player_Tanks':
+        continue
       for item in self.groups[dictKey]:
         item.update()
+    
+    self.spawn_enemy_tanks()
 
   def draw(self, window):
       self.hud.draw(window)
