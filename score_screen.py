@@ -55,7 +55,12 @@ class ScoreScreen:
     window.blit(self.stage_num, self.stage_num_rect)
 
   def generate_scoresheet_screen(self):
-    pass
+    surface = pygame.Surface((gc.SCREENWIDTH, gc.SCREENHEIGHT))
+    surface.fill(gc.BLACK)
+    new_img = gc.imageSize // 2
+    surface.blit(self.images['hiScore'], (new_img * 8, new_img * 4))
+    surface.blit(self.images['stage'], (new_img * 12, new_img * 6))
+    
 
   def number_image(self, score, number_colour):
     num = str(score)
