@@ -13,8 +13,12 @@ class Tank(pygame.sprite.Sprite):
     self.tank_group = self.groups['All_Tanks']
     self.player_group = self.groups['Player_Tanks']
     self.tank_group.add(self)
+
+    levels = {0: None, 4: 'level_0', 5: 'level_1', 6: 'level_2', 7: 'level_3'}
+    if enemy:
+      self.level = levels[tank_level]
+
     self.tank_images = self.assets.tank_images
-    
     self.spawn_images = self.assets.spawn_star_images
     self.spawn_pos = position
     self.xPos, self.yPos = self.spawn_pos
