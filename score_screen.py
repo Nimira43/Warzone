@@ -49,7 +49,10 @@ class ScoreScreen:
       self.clear_for_new_stage()
 
   def draw(self, window):
-    pass
+    window.fill(gc.BLACK)
+    window.blit(self.scoresheet, (0, 0))
+    window.blit(self.hi_score_nums_total, self.hi_score_nums_rect)
+    window.blit(self.stage_num, self.stage_num_rect)
 
   def generate_scoresheet_screen(self):
     pass
