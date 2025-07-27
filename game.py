@@ -122,7 +122,24 @@ class Game:
         continue
       value.empty()
 
-    self.current_level_data
+    self.current_level_data = self.data.level_data[self.level_num - 1]
+    self.enemies = 3
+    self.enemies_killed = self.enemies
+    self.load_level_data(self.current_level_data)
+    self.level_complete = False
+    self.fade.level = self.level_num
+    self.fade.stage_image = self.fade.create_stage_image()
+    self.fade.fade_active = True
+
+    self.generate_spawn_queue()
+    self.spawn_pos_index = 0
+    self.spawn_queue_index = 0
+    print(self.spawn_queue)
+
+    if self.player1_active:
+      self.player1.new_stage_spawn(gc.Pl1_position)
+    if self.player2_active:
+      self.player2.new_stage_spawn(gc.Pl2_position)
 
 
   def load_level_data(self, level):
