@@ -42,6 +42,11 @@ class Fade:
         self.transition = True
         self.timer = pygame.time.get_ticks()
 
+    elif self.transition:
+      if pygame.time.get_ticks() - self.timer >= 1000: 
+        self.fade_in = False
+        self.fade_out = True
+        self.transition = False
 
   def draw(self, window):
     pygame.draw.rect(window, gc.GREY, self.top_rect)
