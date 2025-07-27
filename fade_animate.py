@@ -21,6 +21,11 @@ class Fade:
     self.bot_rect_start_y = self.bot_rect.top
     self.bot_rect_end_y = gc.SCREENHEIGHT // 2
     self.bot_y = self.bot_rect.top
+    self.stage_pic_width, self.stage_pic_height = self.images['stage'].get_size()
+    self.num_pic_width, self.num_pic_height = self.images['num_9'].get_size()
+    self.stage_image = self.create_stage_image()
+    self.stage_image_rect = self.stage_image.get_rect(center=(gc.SCREENWIDTH // 2, gc.SCREENHEIGHT // 2))
+
 
 
   def update(self):
