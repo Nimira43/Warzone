@@ -26,7 +26,15 @@ class ScoreScreen:
     self.p2_tank_num_imgs, self.p2_tank_score_imgs = self.generate_tank_kill_images(20, 25, self.pl2_score_values)
 
   def update(self):
-    pass
+    if not pygame.time.get_ticks() - self.timer >= 3000:
+      return
+    
+    if len(self.p1_kill_list) > 0:
+      if pygame.time.get_ticks() - self.timer >= 100:
+        score = self.p1_kill_list.pop(0)
+        self.update_score(score, 'player1')
+        self.score_timer = pygame.time.get_ticks()
+        return
 
   def draw(self, window):
     pass
