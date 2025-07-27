@@ -3,7 +3,12 @@ import game_config as gc
 
 class Fade:
   def __init__(self, game, assets, speed = 5):
-    pass
+    self.game = game
+    self.level = self.game.level_num - 1
+    self.assets = assets
+    self.images = self.assets.hud_images
+    self.speed = speed
+    self.fade_active = False
 
   def update(self):
     pass
@@ -17,4 +22,3 @@ class Fade:
   def create_stage_image(self):
     pass
 
-  
