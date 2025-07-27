@@ -26,8 +26,6 @@ class Fade:
     self.stage_image = self.create_stage_image()
     self.stage_image_rect = self.stage_image.get_rect(center=(gc.SCREENWIDTH // 2, gc.SCREENHEIGHT // 2))
 
-
-
   def update(self):
     pass
 
@@ -38,5 +36,11 @@ class Fade:
     pass
 
   def create_stage_image(self):
-    pass
-
+    surface = pygame.Surface((self.stage_pic_width + (self.num_pic_width * 3), self.stage_pic_height))
+    surface.fill(gc.GREY)
+    surface.blit(self.images['stage'], (0, 0))
+    if self.level < 10:
+      surface.blit(self.images['num_0'], (self.stage_pic_width + self.num_pic_width, 0))
+    else: 
+      surface.blit(self.images[f'num_{str(self.level)[0]}'], (self.stage_pic_width + self.num_pic_width, 0))
+    
