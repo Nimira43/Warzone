@@ -42,6 +42,11 @@ class ScoreScreen:
         self.update_score(score, 'player2')
         self.score_timer = pygame.time.get_ticks()
         return
+      
+    if pygame.time.get_ticks() - self.score_timer >= 3000:
+      self.active = False
+      self.game.change_level(self.p1_score, self.p2_score)
+      self.clear_for_new_stage()
 
   def draw(self, window):
     pass
