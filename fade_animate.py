@@ -9,6 +9,11 @@ class Fade:
     self.images = self.assets.hud_images
     self.speed = speed
     self.fade_active = False
+    self.fade_in = True
+    self.fade_out = False
+    self.transition = False
+    self.timer = pygame.time.get_ticks()
+    
 
   def update(self):
     pass
