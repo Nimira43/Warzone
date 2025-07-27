@@ -35,6 +35,13 @@ class ScoreScreen:
         self.update_score(score, 'player1')
         self.score_timer = pygame.time.get_ticks()
         return
+    
+    if len(self.p2_kill_list) > 0:
+      if pygame.time.get_ticks() - self.timer >= 100:
+        score = self.p2_kill_list.pop(0)
+        self.update_score(score, 'player2')
+        self.score_timer = pygame.time.get_ticks()
+        return
 
   def draw(self, window):
     pass
