@@ -12,15 +12,28 @@ class Game:
     self.main = main
     self.assets = assets
 
-    self.groups = {'Player_Tanks': pygame.sprite.Group(),
+    self.groups = {'Ice_Tiles': pygame.sprite.Group(),
+                   'Water_Tiles': pygame.sprite.Group(),
+                   'Player_Tanks': pygame.sprite.Group(),
                    'All_Tanks': pygame.sprite.Group(), 
-                   'Bullets': pygame.sprite.Group()}
+                   'Bullets': pygame.sprite.Group(),
+                   'Destructable_Tiles': pygame.sprite.Group(),
+                   'Impassable_Tiles': pygame.sprite.Group(),
+                   'Forest_Tiles': pygame.sprite.Group()}
+    self.top_score = 20000
     self.player1_active = player1
+    self.player1_score = 0
     self.player2_active = player2
+    self.player2_score = 0
 
     self.hud = GameHud(self, self.assets)
-    self.level_num = 1
+    self.level_num = 15
+    self.level_complete = False
+    self.level_transition_timer = None
     self.data = self.main_levels
+
+    self.fade = Fade(self, self.assets, 10)
+    self.scoreScreen = ScoreScreen(self, self.assets)
     
     if self.player1_active: 
       self.player1 = PlayerTank(self, self.assets, self.groups, gc.Pl1_position, 'Up', 'Gold', 0)
