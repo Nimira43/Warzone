@@ -178,7 +178,9 @@ class Tank(pygame.sprite.Sprite):
 class PlayerTank(Tank):
   def __init__(self, game, assets, groups, position, direction, colour, tank_level):
     super().__init__(game, assets, groups, position, direction, False, colour, tank_level)
+    self.player_group.add(self)
     self.lives = 3
+    self.score_list = []
   
   def input(self, keypressed):
     if self.colour == 'Gold':
