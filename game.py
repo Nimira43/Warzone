@@ -100,7 +100,17 @@ class Game:
         
   def draw(self, window):
       self.hud.draw(window)
+
+      if self.scoreScreen.active:
+        self.scoreScreen.draw(window)
+        return
+      
       for dictKey in self.groups.keys():
+        if dictKey == 'Impassable_Tiles': 
+          continue
+        if self.fade.fade_active == True and (dictKey == 'All_tanks' or dictKey == 'Player_Tank'):
+          continue
+        
         for item in self.groups[dictKey]:
           item.draw(window)
 
