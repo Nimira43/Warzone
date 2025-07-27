@@ -95,9 +95,9 @@ class Game:
       self.level_transition_timer = pygame.time.get_ticks()
 
     if self.level_complete:
-      if pygame.time.get_ticks() - self.level_transition_timer >= gc.TRans
-    
-
+      if pygame.time.get_ticks() - self.level_transition_timer >= gc.TRANSITION_TIMER: 
+        self.stage_transition()
+        
   def draw(self, window):
       self.hud.draw(window)
       for dictKey in self.groups.keys():
