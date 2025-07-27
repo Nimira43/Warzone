@@ -33,7 +33,9 @@ class Fade:
     if self.fade_in:
       self.top_y = self.move_y_fade(self.top_y, self.top_rect_start_y, self.top_rect_end_y, self.speed)
       self.top_rect.bottom = self.top_y
-      
+      self.bot_y = self.move_y_fade(self.bot_y, self.bot_rect_start_y, self.bot_rect_end_y, self.speed)
+      self.bot_rect.top = self.bot_y
+
 
   def draw(self, window):
     pygame.draw.rect(window, gc.GREY, self.top_rect)
