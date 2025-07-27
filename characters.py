@@ -145,7 +145,7 @@ class Tank(pygame.sprite.Sprite):
           self.rect.bottom > tank.rect.top and self.rect.top < tank.rect.bottom:
           self.rect.left = tank.rect.right
           self.xPos = self.rect.x
-      
+           
       elif self.direction == 'Up':
         if self.rect.top <= tank.rect.bottom and \
           self.rect.left < tank.rect.right and self.rect.right > tank.rect.left:
@@ -157,7 +157,30 @@ class Tank(pygame.sprite.Sprite):
           self.rect.left < tank.rect.right and self.rect.right > tank.rect.left:
           self.rect.bottom = tank.rect.top
           self.yPos = self.rect.y
-
+  
+  def tank_collisions_with_obstacles (self):
+    wall_collision = pygame.sprite.spritecollide(self, self.groups['Impassable_Tiles'], False)
+    for obstacle in wall_collision:
+      if self.direction == 'Right':
+        if self.rect.right >= obstacle.rect.left:
+          self.rect.right = obstacle.rect.left
+          self.xPos = self.rect.x
+      
+      elif self.direction == 'Left':
+        if self.rect.left <= obstacle.rect.right:
+          self.rect.left = obstacle.rect.right
+          self.xPos = self.rect.x
+           
+      elif self.direction == 'Up':
+        if self.rect.top <= obstacle.rect.bottom:
+          self.rect.top = obstacle.rect.bottom
+          self.yPos = self.rect.y
+      
+      elif self.direction == 'Down':
+        if self.rect.bottom >= obstacle.rect.top:
+          self.rect.bottom = obstacle.rect.top
+          self.yPos = self.rect.y
+      
   def shoot(self):
     if self.bullet_sum >= self.bullet_limit:
       return
