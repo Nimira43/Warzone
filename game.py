@@ -3,6 +3,9 @@ import game_config as gc
 from characters import Tank, PlayerTank
 from game_hud import GameHud
 from random import choice, shuffle
+from tile import BrickTile, SteelTile, ForestTile, IceTile, WaterTile
+from fade_animate import Fade
+from score_screen import ScoreScreen
 
 class Game:
   def __init__(self, main, assets, player1=True, player2=False):
