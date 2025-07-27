@@ -75,6 +75,16 @@ class Tank(pygame.sprite.Sprite):
       # window.blit(self.mask_image, self.rect)
       pygame.draw.rect(window, gc.RED, self.rect, 1)
 
+  def grid_alignment_movement(self, pos):
+    if pos % (gc.imageSize // 2) != 0:
+      if pos % (gc.imageSize // 2) < gc.imageSize // 4:
+        pos -= (pos % (gc.imageSize // 4))
+      elif pos % (gc.imageSize // 2) > gc.imageSize // 4:
+        pos += (gc.imageSize // 4) - (pos % (gc.imageSize // 4))
+      else:
+        return pos
+    return pos
+  
   def move_tank(self, direction):
     if self.spawning:
       return
