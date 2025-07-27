@@ -27,7 +27,13 @@ class Fade:
     self.stage_image_rect = self.stage_image.get_rect(center=(gc.SCREENWIDTH // 2, gc.SCREENHEIGHT // 2))
 
   def update(self):
-    pass
+    if not self.fade_active:
+      return
+    
+    if self.fade_in:
+      self.top_y = self.move_y_fade(self.top_y, self.top_rect_start_y, self.top_rect_end_y, self.speed)
+      self.top_rect.bottom = self.top_y
+      
 
   def draw(self, window):
     pygame.draw.rect(window, gc.GREY, self.top_rect)
