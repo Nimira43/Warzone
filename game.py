@@ -90,6 +90,12 @@ class Game:
     
     self.spawn_enemy_tanks()
 
+    if self.enemies_killed <= 0 and self.level_complete == False:
+      self.level_complete = True
+      self.level_transition_timer = pygame.time.get_ticks()
+
+    
+
   def draw(self, window):
       self.hud.draw(window)
       for dictKey in self.groups.keys():
