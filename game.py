@@ -151,7 +151,8 @@ class Game:
         line.append('   ')
       elif int(tile) == 432:
         line.append(f'{tile}')
-        map.tile = BrickTile()
+        map_tile = BrickTile(pos, self.groups['Destructable_Tiles'], self.assets.brick_tiles)
+        self.groups['Impassable_Tiles'].add(map_tile)
 
   def generate_spawn_queue(self):
     pass
