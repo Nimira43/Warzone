@@ -206,4 +206,9 @@ class Game:
     self.scoreScreen.update()
 
   def change_level(self, p1_score, p2_score):
-    pass
+    self.level_num += 1
+    self.level_num = self.level_num % len(self.data.level_data)
+    self.player1_score = p1_score
+    self.player2_score = p2_score
+    self.create_new_stage()
+    
