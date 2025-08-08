@@ -191,3 +191,9 @@ class Game:
       self.spawn_pos_index += 1
       self.spawn_queue_index += 1
       self.enemies -= 1
+
+  def stage_transition(self):
+    pass
+
+  def change_level(self, p1_score, p2_score):
+    pass
