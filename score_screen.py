@@ -84,7 +84,7 @@ class ScoreScreen:
     
     for num, yPos in enumerate([12.5, 15, 17.5, 20]):
       if self.game.player1_active:
-        surface.blit(self.image['pts'], (new_img * 8, new_img * yPos))
+        surface.blit(self.images['pts'], (new_img * 8, new_img * yPos))
         surface.blit(arrow_left, (new_img * 14, new_img * yPos))
       if self.game.player2_active:
         surface.blit(self.image['pts'], (new_img * 26, new_img * yPos))
@@ -97,15 +97,15 @@ class ScoreScreen:
   def number_image(self, score, number_colour):
     num = str(score)
     length = len(num)
-    score_surface = pygame.Surface(gc.imageSize // 2 * length, gc.imageSize // 2)
+    score_surface = pygame.Surface((gc.imageSize // 2 * length, gc.imageSize // 2))
     for index, number in enumerate(num):
       score_surface.blit(number_colour[int(number)], (gc.imageSize // 2 * index, 0))
     return score_surface
 
   def update_player_score_images(self):
-    self.pl1_score = self.number_image(self.pl1_score, self.orange_nums)
+    self.pl_1_score = self.number_image(self.p1_score, self.orange_nums)
     self.pl1_score_rect = self.pl_1_score.get_rect(topleft=(gc.imageSize // 2 * 11 - self.pl_1_score.get_width(), gc.imageSize // 2 * 10))
-    self.pl2_score = self.number_image(self.pl2_score, self.orange_nums)
+    self.pl_2_score = self.number_image(self.p2_score, self.orange_nums)
     self.pl2_score_rect = self.pl_2_score.get_rect(topleft=(gc.imageSize // 2 * 29 - self.pl_2_score.get_width(), gc.imageSize // 2 * 10))
 
   def _create_top_score_and_stage_number_images(self):
