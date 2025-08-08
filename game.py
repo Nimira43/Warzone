@@ -172,7 +172,8 @@ class Game:
       self.grid.append(line)
 
   def generate_spawn_queue(self):
-    pass
+    self.spawn_queues_ratios = gc.Tank_spawn_queue[f'queue_{str((self.level_num - 1 % 36) // 3)}']
+    self.spawn_queue = []
 
   def spawn_enemy_tanks(self):
     pass
