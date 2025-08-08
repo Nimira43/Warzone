@@ -157,6 +157,13 @@ class Game:
         line.append(f'{tile}')
         map_tile = SteelTile(pos, self.groups['Destructable_Tiles'], self.assets.steel_tiles)
         self.groups['Impassable_Tiles'].add(map_tile)
+      elif int(tile) == 483:
+        line.append(f'{tile}')
+        map_tile = ForestTile(pos, self.groups['Forest_Tiles'], self.assets.forest_tiles)
+      elif int(tile) == 484:
+        line.append(f'{tile}')
+        map_tile = IceTile(pos, self.groups['Ice_Tiles'], self.assets.ice_tiles)
+        
 
   def generate_spawn_queue(self):
     pass
