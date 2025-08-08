@@ -147,23 +147,29 @@ class Game:
       line = []
       for j, tile in enumerate(row):
         pos = (gc.SCREEN_BORDER_LEFT + (j * gc.imageSize // 2), gc.SCREEN_BORDER_TOP + (i * gc.imageSize // 2))
-      if int(tile) < 0:
-        line.append('   ')
-      elif int(tile) == 432:
-        line.append(f'{tile}')
-        map_tile = BrickTile(pos, self.groups['Destructable_Tiles'], self.assets.brick_tiles)
-        self.groups['Impassable_Tiles'].add(map_tile)
-      elif int(tile) == 482:
-        line.append(f'{tile}')
-        map_tile = SteelTile(pos, self.groups['Destructable_Tiles'], self.assets.steel_tiles)
-        self.groups['Impassable_Tiles'].add(map_tile)
-      elif int(tile) == 483:
-        line.append(f'{tile}')
-        map_tile = ForestTile(pos, self.groups['Forest_Tiles'], self.assets.forest_tiles)
-      elif int(tile) == 484:
-        line.append(f'{tile}')
-        map_tile = IceTile(pos, self.groups['Ice_Tiles'], self.assets.ice_tiles)
-        
+        if int(tile) < 0:
+          line.append('   ')
+        elif int(tile) == 432:
+          line.append(f'{tile}')
+          map_tile = BrickTile(pos, self.groups['Destructable_Tiles'], self.assets.brick_tiles)
+          self.groups['Impassable_Tiles'].add(map_tile)
+        elif int(tile) == 482:
+          line.append(f'{tile}')
+          map_tile = SteelTile(pos, self.groups['Destructable_Tiles'], self.assets.steel_tiles)
+          self.groups['Impassable_Tiles'].add(map_tile)
+        elif int(tile) == 483:
+          line.append(f'{tile}')
+          map_tile = ForestTile(pos, self.groups['Forest_Tiles'], self.assets.forest_tiles)
+        elif int(tile) == 484:
+          line.append(f'{tile}')
+          map_tile = IceTile(pos, self.groups['Ice_Tiles'], self.assets.ice_tiles)
+        elif int(tile) == 533:
+          line.append(f'{tile}')
+          map_tile = WaterTile(pos, self.groups['Water_Tiles'], self.assets.water_tiles)
+          self.groups['Impassable_Tiles'].add(map_tile)
+        else:
+          line.append(f'{tile}')
+      self.grid.append(line)
 
   def generate_spawn_queue(self):
     pass
