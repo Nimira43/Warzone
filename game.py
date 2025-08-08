@@ -201,6 +201,9 @@ class Game:
       if self.player2_active:
         self.scoreScreen.p2_score = self.player2_score
         self.scoreScreen.p2_kill_list = sorted(self.player2.score_list)
+      self.scoreScreen.update_basic_info(self.top_score, self.level_num)
+    self.scoreScreen.active = True
+    self.scoreScreen.update()
 
   def change_level(self, p1_score, p2_score):
     pass
