@@ -153,6 +153,10 @@ class Game:
         line.append(f'{tile}')
         map_tile = BrickTile(pos, self.groups['Destructable_Tiles'], self.assets.brick_tiles)
         self.groups['Impassable_Tiles'].add(map_tile)
+      elif int(tile) == 482:
+        line.append(f'{tile}')
+        map_tile = SteelTile(pos, self.groups['Destructable_Tiles'], self.assets.steel_tiles)
+        self.groups['Impassable_Tiles'].add(map_tile)
 
   def generate_spawn_queue(self):
     pass
