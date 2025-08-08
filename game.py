@@ -193,7 +193,9 @@ class Game:
       self.enemies -= 1
 
   def stage_transition(self):
-    pass
+    if not self.scoreScreen.active:
+      self.scoreScreen.timer = pygame.time.get_ticks()
+      
 
   def change_level(self, p1_score, p2_score):
     pass
