@@ -181,4 +181,8 @@ class Game:
     shuffle(self.spawn_queue) 
 
   def spawn_enemy_tanks(self):
-    pass
+    if self.enemies == 0:
+      return
+    if pygame.time.get_ticks() - self.enemy_tank_spawn_timer >= gc.TANK_SPAWNING_TIME:
+      position = self.enemy_spawn_positions[self.spwan_pos_timer % 3]
+      tank_level = gc.Tank_Critrea[self.spawn_queue[self.spawn_queue_index % len(self.spawn_queue)]]['image']
