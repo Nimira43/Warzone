@@ -175,5 +175,10 @@ class Game:
     self.spawn_queues_ratios = gc.Tank_spawn_queue[f'queue_{str((self.level_num - 1 % 36) // 3)}']
     self.spawn_queue = []
 
+    for lvl, ratio in enumerate(self.spawn_queues_ratios):
+      for i in range(int(round(self.enemies * (ratio / 100)))):
+        self.spawn_queue.append(f'level_{lvl}')
+    shuffle(self.spawn_queue) 
+
   def spawn_enemy_tanks(self):
     pass
