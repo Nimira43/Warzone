@@ -87,7 +87,7 @@ class ScoreScreen:
         surface.blit(self.images['pts'], (new_img * 8, new_img * yPos))
         surface.blit(arrow_left, (new_img * 14, new_img * yPos))
       if self.game.player2_active:
-        surface.blit(self.image['pts'], (new_img * 26, new_img * yPos))
+        surface.blit(self.images['pts'], (new_img * 26, new_img * yPos))
         surface.blit(arrow_right, (new_img * 17, new_img * yPos))
       surface.blit(self.assets.tank_images[f'Tank_{num + 4}']['Silver']['Up'][0], (new_img * 15, new_img * (yPos - 0.5)))
     
