@@ -56,7 +56,7 @@ class Main:
 
     if self.game:
       if self.game.end_game == True:
-        self.start_screen = StartScreen(self.self.assets)
+        self.start_screen = StartScreen(self, self.assets)
         self.start_screen_active = True
         self.game_on = False
         self.game = None
