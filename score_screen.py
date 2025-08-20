@@ -137,7 +137,7 @@ class ScoreScreen:
     for i in range(4):
       tank_score_imgs[f'line{i + 1}'] = []
       tank_score_imgs[f'line{i + 1}'].append(self.number_image(pl_dict[f'line{i + 1}'][0], self.white_nums))
-      tank_score_imgs[f'line{i + 1}'].append((size * x1 - tank_score_imgs[f'line{i + 1}'][0].get_width(), size * yPos[i]))
+      tank_score_imgs[f'line{i + 1}'].append((size * x2 - tank_score_imgs[f'line{i + 1}'][0].get_width(), size * yPos[i]))
     return tank_num_imgs, tank_score_imgs
 
   def update_score(self, score, player):
