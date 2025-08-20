@@ -54,7 +54,7 @@ class LevelEditor:
         self.main.run = False
       elif event.type == pygame.KEYDOWN:
         if event.key == pygame.K_ESCAPE:
-          self.main.run = False
+          self.active = False
 
         if event.key == pygame.K_d or event.key == pygame.K_RIGHT:
           self.icon_rect.x += gc.imageSize
@@ -81,6 +81,7 @@ class LevelEditor:
           self.validate_level()
           self.all_levels.append(self.matrix)
           self.level_data.save_level_data(self.all_levels)
+          self.main.levels.level_data = self.all_levels
           self.active = False
 
   def update(self):
