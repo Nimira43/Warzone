@@ -143,7 +143,7 @@ class LevelEditor:
       self.matrix[cell[1]][cell[0]] = -1
     for cell in gc.BASE:
       self.matrix[cell[1]][cell[0]] = -1
-    self.matrix[24][24] = 999
+    self.matrix[24][12] = 999
     for cell in gc.FORT:
       if self.matrix[cell[1]][cell[0]] == -1:
         self.matrix[cell[1]][cell[0]] = 432
