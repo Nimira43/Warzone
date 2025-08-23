@@ -34,4 +34,8 @@ class PowerUps():
   def fortify():
     pass
 
-  
+  def update():
+    pass
+
+  def draw():
+    pass
