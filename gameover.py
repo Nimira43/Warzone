@@ -12,8 +12,9 @@ class GameOver:
     self.timer = pygame.time.get_ticks()
     self.active = False
 
-  def activate():
-    pass
+  def activate(self):
+    self.active = True
+    self.timer = pygame.time.get_ticks()
 
   def update():
     pass
