@@ -25,4 +25,6 @@ class Eagle(pygame.sprite.Sprite):
     window.blit(self.image, self.rect)
 
   def destroy_base(self):
-    pass
+    self.active = False
+    self.image = self.assets.flag['Phoenix_Destroyed']
+    Explosion(self.assets, self.group, self.rect.center, 5, 0)
