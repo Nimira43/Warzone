@@ -13,9 +13,12 @@ class PowerUps(pygame.sprite.Sprite):
     self.groups = groups
     self.groups['Power_Ups'].add(self)
 
+    self.power_up = self.randomly_select_power_up()
 
-  def randomly_select_power_up():
-    pass
+  def randomly_select_power_up(self):
+    powerups = list(gc.POWER_UPS.keys())
+    selected_powerup = random.choice(powerups)
+    return selected_powerup
 
   def power_up_collected():
     pass
