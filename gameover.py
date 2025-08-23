@@ -28,5 +28,5 @@ class GameOver:
         self.active = False
         self.game.stage_transition(True)
 
-  def draw():
-    pass
+  def draw(self, window):
+    window.blit(self.game_over_image, self.game_over_rect)
