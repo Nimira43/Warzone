@@ -22,7 +22,7 @@ class Eagle(pygame.sprite.Sprite):
         self.game.player2.game_over = True
 
   def draw(self, window):
-    pass
+    window.blit(self.image, self.rect)
 
   def destroy_base(self):
     pass
