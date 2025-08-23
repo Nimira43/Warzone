@@ -32,4 +32,4 @@ class Explosion(pygame.sprite.Sprite):
       self.rect = self.image.get_rect(center=self.pos)
 
   def draw(self, window):
-    pass
+    window.blit(self.image, self.rect)
