@@ -19,6 +19,9 @@ class GameOver:
   def update(self):
     if self.game_over_rect.y > gc.SCREENHEIGHT // 4 - self.g_height // 2:
       self.game_over_rect.y -= 10
+    elif self.game_over_rect.y < gc.SCREENHEIGHT // 4 - self.g_height // 2:
+      self.game_over_rect.y = gc.SCREENHEIGHT // 4 - self.g_height // 2
+      self.timer = pygame.time.get_ticks()
 
   def draw():
     pass
