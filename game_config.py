@@ -74,7 +74,7 @@ MAP_TILES = {
           'small_bot': [spriteSize * 17, (spriteSize * 4) + 4, 8, 4],
           'small_left': [(spriteSize * 17) + 8, spriteSize * 4, 4, 8],
           'small_top': [(spriteSize * 18), spriteSize * 4, 8, 4]},    
-    482: {'small': [(spriteSize * 16), (spriteSize * 4) + 8, 8, 8]},
+    482: {'small': [spriteSize * 16, (spriteSize * 4) + 8, 8, 8]},
     483: {'small': [(spriteSize * 16) + 8, (spriteSize * 4) + 8, 8, 8]},
     484: {'small': [(spriteSize * 17), (spriteSize * 4) + 8, 8, 8]},
     533: {'small_1': [(spriteSize * 16) + 8, (spriteSize * 5), 8, 8],
@@ -110,6 +110,8 @@ PLAYER_TANK_SPAWNS = [(8, 24), (8, 25), (9, 24), (9, 25), (16, 24), (16, 25), (1
 BASE = [(12, 24), (12, 25), (13, 24), (13, 25)]
 
 FORT = [(11, 25), (11, 24), (11, 23), (12, 23), (13, 23), (14, 23), (14, 24), (14, 25)]
+
+FLAG_POSITION = (SCREEN_BORDER_LEFT + imageSize // 2 * 12, SCREEN_BORDER_TOP + imageSize // 2 * 24)
 
 Tank_Critrea = {
     'level_0': {'image': 4, 'health': 1, 'speed': 0.5, 'cooldown': 1, 'power': 1, 'score': 100},
