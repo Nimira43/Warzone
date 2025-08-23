@@ -29,8 +29,10 @@ class PowerUps(pygame.sprite.Sprite):
     selected_powerup = random.choice(powerups)
     return selected_powerup
 
-  def power_up_collected():
-    pass
+  def power_up_collected(self):
+    ScoreBanner(self.assets, self.groups, self.rect.center, '500')
+    self.assets.channel_bonus_sound.play(self.assets.bonus_sound)
+    self.kill()
 
   def shield():
     pass
