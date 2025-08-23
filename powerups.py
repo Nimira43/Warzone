@@ -42,8 +42,12 @@ class PowerUps(pygame.sprite.Sprite):
       if tank.enemy:
         tank.paralyze_tank(5000)
 
-  def explosion():
-    pass
+  def explosion(self, player):
+    for tank in self.groups['All_Tanks']:
+      if tank.enemy:
+        score = tank.score
+        player.score_list.append(score)
+        tank.destroy_tank(5000)
 
   def extra_life():
     pass
