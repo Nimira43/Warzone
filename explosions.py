@@ -20,6 +20,11 @@ class Explosion(pygame.sprite.Sprite):
   def update(self):
     if pygame.time.get_ticks() - self.anim_timer >= 100:
       self.frame_index += 1
+      if self.frame_index >= len(self.images):
+        self.kill()
+        if self.score == 0:
+          return
+        ScoreBanner(self.assets, self.group, self.rect.center, self.score)
 
   def draw(self, window):
     pass
