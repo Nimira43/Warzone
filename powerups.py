@@ -73,8 +73,11 @@ class PowerUps(pygame.sprite.Sprite):
     player.mask = player.mask_dict[player.direction]
 
 
-  def fortify():
-    pass
+  def fortify(self):
+    self.game.fortify = True
+    self.game.fortify_timer = pygame.time.get_ticks()
+    self.game.power_up_fortify()
+    
 
   def update():
     pass
