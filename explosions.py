@@ -11,7 +11,11 @@ class Explosion(pygame.sprite.Sprite):
     self.score = score
     self.pos = pos
     self.explode_type = explode_type
-    
+    self.frame_index = 1
+    self.images = self.assets.explosions
+    self.image = self.images['explode_1']
+    self.rect = self.image.get_rect(center=self.pos)
+    self.anim_timer = pygame.time.get_ticks()
 
   def update(self):
     pass
