@@ -49,8 +49,8 @@ class PowerUps(pygame.sprite.Sprite):
         player.score_list.append(score)
         tank.destroy_tank(5000)
 
-  def extra_life():
-    pass
+  def extra_life(self, player):
+    player.lives += 1
 
   def power():
     pass
