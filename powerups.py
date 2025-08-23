@@ -18,3 +18,20 @@ class PowerUps():
 
   def freeze():
     pass
+
+  def explosion():
+    pass
+
+  def extra_life():
+    pass
+
+  def power():
+    pass
+
+  def special():
+    pass
+
+  def fortify():
+    pass
+
+  
