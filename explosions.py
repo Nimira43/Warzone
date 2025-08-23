@@ -25,6 +25,11 @@ class Explosion(pygame.sprite.Sprite):
         if self.score == 0:
           return
         ScoreBanner(self.assets, self.group, self.rect.center, self.score)
+      if self.explode_type == 1 and self.frame_index > 3:
+        self.kill()
+      self.anim_timer = pygame.time.get_ticks()
+      self.image = self.images[f'explode_{self.frame_index}']
+      self.rect = self.image.get_rect(center=self.pos)
 
   def draw(self, window):
     pass
