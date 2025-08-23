@@ -20,6 +20,9 @@ class PowerUps(pygame.sprite.Sprite):
     
     self.yPos = random.randint(gc.SCREEN_BORDER_TOP, gc.SCREEN_BORDER_BOTTOM - gc.imageSize)
 
+    self.image = self.powerup_images[self.power_up]
+    self.rect = self.image.get_rect(topleft=(self.xPos, self.yPos))
+
 
   def randomly_select_power_up(self):
     powerups = list(gc.POWER_UPS.keys())
