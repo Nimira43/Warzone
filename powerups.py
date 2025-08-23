@@ -37,8 +37,10 @@ class PowerUps(pygame.sprite.Sprite):
   def shield(self, player):
     player.shield_start = True
 
-  def freeze():
-    pass
+  def freeze(self):
+    for tank in self.groups['All_Tanks']:
+      if tank.enemy:
+        tank.paralyze_tank(5000)
 
   def explosion():
     pass
