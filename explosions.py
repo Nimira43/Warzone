@@ -18,7 +18,8 @@ class Explosion(pygame.sprite.Sprite):
     self.anim_timer = pygame.time.get_ticks()
 
   def update(self):
-    pass
+    if pygame.time.get_ticks() - self.anim_timer >= 100:
+      self.frame_index += 1
 
   def draw(self, window):
     pass
