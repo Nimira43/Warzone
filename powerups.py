@@ -34,8 +34,8 @@ class PowerUps(pygame.sprite.Sprite):
     self.assets.channel_bonus_sound.play(self.assets.bonus_sound)
     self.kill()
 
-  def shield():
-    pass
+  def shield(self, player):
+    player.shield_start = True
 
   def freeze():
     pass
