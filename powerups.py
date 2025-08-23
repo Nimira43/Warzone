@@ -52,8 +52,12 @@ class PowerUps(pygame.sprite.Sprite):
   def extra_life(self, player):
     player.lives += 1
 
-  def power():
-    pass
+  def power(self, player):
+    player.bullet_speed_modifier += 0.1
+    if player.bullet_speed_modifier > 1.5:
+      player.bullet_speed_modifier = 1
+      player.bullet_limit += 1
+    player.bullet_speed = gc.TANK_SPEED * (3 * player.bullet_speed_modifier)
 
   def special():
     pass
