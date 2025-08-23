@@ -1,11 +1,11 @@
 import pygame
 
-class ScoreBanner():
-  def __init__():
+class ScoreBanner(pygame.sprite.Sprite):
+  def __init__(self, assets, group, pos, score):
     pass
 
-  def update():
+  def update(self):
     pass
 
-  def draw():
+  def draw(self, windows):
     pass
