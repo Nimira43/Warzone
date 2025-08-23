@@ -10,7 +10,9 @@ class ScoreBanner(pygame.sprite.Sprite):
     self.score = str(score)
 
   def update(self):
-    pass
+    self.rect.y -= 1
+    if pygame.time.get_ticks() - self.timer >= 1000:
+      self.kill()
 
-  def draw(self, windows):
-    pass
+  def draw(self, window):
+    window.blit(self.image, self.rect)
