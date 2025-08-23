@@ -3,9 +3,10 @@ import random
 import game_config as gc
 from scores import ScoreBanner
 
-class PowerUps():
-  def __init__():
-    pass
+class PowerUps(pygame.sprite.Sprite):
+  def __init__(self, game, assets, groups):
+    super().__init__()
+    
 
   def randomly_select_power_up():
     pass
