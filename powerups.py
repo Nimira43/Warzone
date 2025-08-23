@@ -59,8 +59,19 @@ class PowerUps(pygame.sprite.Sprite):
       player.bullet_limit += 1
     player.bullet_speed = gc.TANK_SPEED * (3 * player.bullet_speed_modifier)
 
-  def special():
-    pass
+  def special(self, player):
+    if player.power >= 4:
+      player.amphibious = True
+      return
+    player.power += 1
+    player.tank_level += 1
+    if player.tank_level >= 3:
+      player.tank_level = 3
+      player.tank_health += 1
+    player.image = player.tank_images[f'Tank_{player.tank_level}'][player.colour][player.direction][player.frame_index]
+    player.mask_dict = player.get_various_masks()
+    player.mask = player.mask_dict[player.direction]
+
 
   def fortify():
     pass
