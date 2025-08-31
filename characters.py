@@ -169,7 +169,7 @@ class Tank(pygame.sprite.Sprite):
     if len(tank_collision) == 1:
       return
     for tank in tank_collision:
-      if tank == self:
+      if tank == self or tank.spawning == True:
         continue
       
       if self.direction == 'Right':
