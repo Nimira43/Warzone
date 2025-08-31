@@ -93,6 +93,16 @@ class PowerUps(pygame.sprite.Sprite):
         self.shield(player_tank)
       elif self.power_up == 'freeze':
         self.freeze()
+      elif self.power_up == 'explosion':
+        self.explosion(player_tank)
+      elif self.power_up == 'extra_life':
+        self.extra_life(player_tank)
+      elif self.power_up == 'power':
+        self.power(player_tank)
+      elif self.power_up == 'special':
+        self.special(player_tank)
+      elif self.power_up == 'fortify':
+        self.fortify()
     
 
   def draw():
