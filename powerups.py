@@ -79,8 +79,10 @@ class PowerUps(pygame.sprite.Sprite):
     self.game.power_up_fortify()
     
 
-  def update():
-    pass
+  def update(self):
+    if pygame.time.get_ticks() - self.power_up_timer >= 5000:
+      self.kill()
+    
 
   def draw():
     pass
