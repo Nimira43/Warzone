@@ -103,7 +103,11 @@ class Bullet(pygame.sprite.Sprite):
       Explosion(self.assets, self.group, self.rect.center, 1)
       
   def base_collision(self):
-    pass
+    if self.rect.colliderect(self.group['Eagle'].sprite.rect):
+      Explosion(self.assets, self.group, self.rect.center, 1)
+      self.update_owner()
+      self.group['Eagle'].sprite.destroy_base()
+      self.kill()
 
   def update_owner(self):
     if self.owner.bullet_sum > 0:
