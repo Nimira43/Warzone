@@ -1,5 +1,8 @@
 import pygame
 from ammunition import Bullet
+from explosions import Explosion
+from powerups import PowerUps
+import random
 import game_config as gc
 
 class Tank(pygame.sprite.Sprite):
