@@ -77,9 +77,13 @@ class Tank(pygame.sprite.Sprite):
       if pygame.time.get_ticks() - self.spawn_anim_timer >= 50:
         self.spawn_animation()
       if pygame.time.get_ticks() - self.spawn_timer > 2000:
-        self.frame_index = 0
-        self.spawning = False
-        self.active = True
+        colliding_sprites = pygame.sprite.spritecollide(self, self.tank_group, False)
+        if len(colliding_sprites) == 1:
+          self.frame_index = 0
+          self.spawning = False
+          self.active = True
+        else:
+          self.spawn_star_collection(colliding_sprites)
       return
     if self.paralyzed:
       if pygame.time.get_ticks() - self.paralysis_timer >= self.paralysis:
@@ -213,6 +217,12 @@ class Tank(pygame.sprite.Sprite):
         if self.rect.bottom >= obstacle.rect.top:
           self.rect.bottom = obstacle.rect.top
           self.yPos = self.rect.y
+
+  def spawn_star_collision(self, colliding_sprites):
+    pass
+
+  def base_collision(self):
+    pass
       
   def shoot(self):
     if self.bullet_sum >= self.bullet_limit:
