@@ -106,5 +106,5 @@ class PowerUps(pygame.sprite.Sprite):
       print(self.power_up)
       self.power_up_collected()
 
-  def draw():
-    pass
+  def draw(self, window):
+    window.blit(self.image, self.rect)
