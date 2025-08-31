@@ -51,10 +51,14 @@ class Tank(pygame.sprite.Sprite):
 
     self.bullet_limit = 1
     self.bullet_sum = 0
+    self.shot_cooldown_time = 500
+    self.shot_cooldown = pygame.time.get_ticks()
 
     self.paralyzed = False
     self.paralysis = gc.TANK_PARALYSIS
     self.paralysis_timer = pygame.time.get_ticks()
+
+    self.amphibious = False
 
     self.spawn_image = self.spawn_images[f'star_{self.frame_index}']
     self.spawn_timer = pygame.time.get_ticks()
