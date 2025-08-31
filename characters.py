@@ -140,6 +140,7 @@ class Tank(pygame.sprite.Sprite):
     self.tank_movement_animation()
     self.tank_on_tank_collisions()
     self.tank_collisions_with_obstacles()
+    self.base_collision()
 
   def tank_movement_animation(self):
     self.frame_index += 1
