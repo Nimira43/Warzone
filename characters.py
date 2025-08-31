@@ -199,6 +199,8 @@ class Tank(pygame.sprite.Sprite):
   def tank_collisions_with_obstacles (self):
     wall_collision = pygame.sprite.spritecollide(self, self.groups['Impassable_Tiles'], False)
     for obstacle in wall_collision:
+      if obstacle in self.groups['Water_Tiles'] and self.amphibious == True:
+        continue
       if self.direction == 'Right':
         if self.rect.right >= obstacle.rect.left:
           self.rect.right = obstacle.rect.left
