@@ -33,15 +33,15 @@ class Bullet(pygame.sprite.Sprite):
     pygame.draw.rect(window, gc.GREEN, self.rect, 1)
 
   def move(self):
-    speed = gc.TANK_SPEED * 3
+    # speed = gc.TANK_SPEED * 3
     if self.direction == 'Up':
-      self.yPos -= speed
+      self.yPos -= self.speed
     elif self.direction == 'Down':
-      self.yPos += speed
+      self.yPos += self.speed
     elif self.direction == 'Left':
-      self.xPos -= speed
+      self.xPos -= self.speed
     elif self.direction == 'Right':
-      self.xPos += speed
+      self.xPos += self.speed
     self.rect.center = (self.xPos, self.yPos)
 
   def collide_edge_of_screen(self):
