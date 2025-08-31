@@ -12,7 +12,6 @@ class MyRect(pygame.sprite.Sprite):
     self.rect = pygame.Rect(x, y, width, height)
 
 class Tank(pygame.sprite.Sprite):
-
   def __init__(self, game, assets, groups, position, direction, enemy = True, colour='Silver', tank_level=0):
     super().__init__()
     self.game = game
@@ -24,8 +23,7 @@ class Tank(pygame.sprite.Sprite):
     self.tank_group.add(self)
 
     levels = {0: None, 4: 'level_0', 5: 'level_1', 6: 'level_2', 7: 'level_3'}
-    if enemy:
-      self.level = levels[tank_level]
+    self.level = levels[tank_level]
 
     self.tank_images = self.assets.tank_images
     self.spawn_images = self.assets.spawn_star_images
@@ -38,7 +36,8 @@ class Tank(pygame.sprite.Sprite):
             
     self.tank_level = tank_level
     self.colour = colour
-    self.tank_speed = gc.TANK_SPEED
+    self.tank_speed = gc.TANK_SPEED if not self.level else gc.TANK_SPEED * gc.Tank_Critrea[self.level]['speed']
+    self.power = 1 if not self.level else gc.Tank_Critrea[self.level]['power']
     self.enemy = enemy
     self.tank_health = 1
 
