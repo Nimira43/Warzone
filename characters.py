@@ -38,8 +38,11 @@ class Tank(pygame.sprite.Sprite):
     self.colour = colour
     self.tank_speed = gc.TANK_SPEED if not self.level else gc.TANK_SPEED * gc.Tank_Critrea[self.level]['speed']
     self.power = 1 if not self.level else gc.Tank_Critrea[self.level]['power']
+    self.bullet_speed_modifier = 1
+    self.bullet_speed = gc.TANK_SPEED * (3 * self.bullet_speed_modifier)
+    self.score = 100 if not self.level else gc.Tank_Critrea[self.level]['score']
     self.enemy = enemy
-    self.tank_health = 1
+    self.tank_health = 1 if not self.level else gc.Tank_Critrea[self.level]['health']
 
     self.frame_index = 0
     self.image = self.tank_images[f'Tank_{self.tank_level}'][self.colour][self.direction][self.frame_index]
