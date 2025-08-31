@@ -82,6 +82,12 @@ class PowerUps(pygame.sprite.Sprite):
   def update(self):
     if pygame.time.get_ticks() - self.power_up_timer >= 5000:
       self.kill()
+    player_tank = pygame.sprite.spritecollideany(self, self.groups['Player_Tanks'])
+    if player_tank:
+      if player_tank.colour == 'Gold':
+        self.game.player1_score += 500
+      elif player_tank.colour == 'Green':
+        self.game.player2_score += 500
     
 
   def draw():
