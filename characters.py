@@ -5,6 +5,12 @@ from powerups import PowerUps
 import random
 import game_config as gc
 
+class MyRect(pygame.sprite.Sprite):
+  def __init__(self, x, y, width, height):
+    super().__init__()
+    self.image = None
+    self.rect = pygame.Rect(x, y, width, height)
+
 class Tank(pygame.sprite.Sprite):
 
   def __init__(self, game, assets, groups, position, direction, enemy = True, colour='Silver', tank_level=0):
