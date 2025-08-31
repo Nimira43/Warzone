@@ -50,6 +50,8 @@ class Bullet(pygame.sprite.Sprite):
       self.rect.bottom >= gc.SCREEN_BORDER_BOTTOM or \
       self.rect.left <= gc.SCREEN_BORDER_LEFT or \
       self.rect.right >= gc.SCREEN_BORDER_RIGHT:
+      Explosion(self.assets, self.group, self.rect.center, 1)
+      self.assets.channel_steel_sound.play(self.assets.settel_sound)
       self.update_owner()
       self.kill()
 
