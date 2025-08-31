@@ -25,8 +25,7 @@ class Bullet(pygame.sprite.Sprite):
     self.collide_with_tank()
     self.collision_with_bullet()
     self.collision_with_obstacle()
-    self.base_collection()
-
+    self.base_collision()
 
   def draw(self, window):
     window.blit(self.image, self.rect)
@@ -92,6 +91,9 @@ class Bullet(pygame.sprite.Sprite):
     obstacle_collide = pygame.sprite.spritecollide(self, self.group['Destructable_Tiles'], False)
     for obstacle in obstacle_collide:
       obstacle.hit_by_bullet(self)
+
+  def base_collision(self):
+    pass
 
   def update_owner(self):
     if self.owner.bullet_sum > 0:
