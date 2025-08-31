@@ -64,6 +64,7 @@ class Bullet(pygame.sprite.Sprite):
         if pygame.sprite.collide_mask(self, tank):
           self.update_owner()
           tank.paralyze_tank(gc.TANK_PARALYSIS)
+          Explosion(self.assets, self.group, self.rect.center, 1)
           self.kill()
           break
       if (self.owner.enemy == False and tank.enemy == True) or \
@@ -73,6 +74,7 @@ class Bullet(pygame.sprite.Sprite):
           if not self.owner.enemy:
             self.owner.score_list.append(gc.Tank_Critrea[tank.level]['score'])
           tank.destroy_tank()
+          Explosion(self.assets, self.group, self.rect.center, 1)
           self.kill()
           break
 
