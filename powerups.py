@@ -103,7 +103,8 @@ class PowerUps(pygame.sprite.Sprite):
         self.special(player_tank)
       elif self.power_up == 'fortify':
         self.fortify()
-    
+      print(self.power_up)
+      self.power_up_collected()
 
   def draw():
     pass
