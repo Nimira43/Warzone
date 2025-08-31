@@ -95,8 +95,13 @@ class Bullet(pygame.sprite.Sprite):
   def collision_with_obstacle(self):
     obstacle_collide = pygame.sprite.spritecollide(self, self.group['Destructable_Tiles'], False)
     for obstacle in obstacle_collide:
+      if obstacle.name == 'Brick':
+        self.assets.channel_brick_sound.play(self.assets.brick_sound)
+      elif obstacle.name == 'Steel':
+        self.assets.channel_steel_sound.play(self.assets.steel_sound)
       obstacle.hit_by_bullet(self)
-
+      Explosion(self.assets, self.group, self.rect.center, 1)
+      
   def base_collision(self):
     pass
 
