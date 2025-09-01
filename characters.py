@@ -196,18 +196,6 @@ class Tank(pygame.sprite.Sprite):
           self.rect.bottom = tank.rect.top
           self.yPos = self.rect.y
 
-  def spawn_star_collision(self, colliding_sprites):
-    for tank in colliding_sprites:
-      if tank.active:
-        return
-    for tank in colliding_sprites:
-      if tank == self:
-        continue  
-      if self.spawning and tank.spawning:
-        self.frame_index = 0
-        self.spawning = False
-        self.active = True    
-
   def tank_collisions_with_obstacles (self):
     wall_collision = pygame.sprite.spritecollide(self, self.groups['Impassable_Tiles'], False)
     for obstacle in wall_collision:
@@ -234,10 +222,20 @@ class Tank(pygame.sprite.Sprite):
           self.yPos = self.rect.y
 
   def spawn_star_collision(self, colliding_sprites):
-    pass
+    for tank in colliding_sprites:
+      if tank.active:
+        return
+    for tank in colliding_sprites:
+      if tank == self:
+        continue  
+      if self.spawning and tank.spawning:
+        self.frame_index = 0
+        self.spawning = False
+        self.active = True    
 
   def base_collision(self):
-    pass
+    if not self.groups['Eagle'].sprite.active:
+      return
       
   def shoot(self):
     if self.bullet_sum >= self.bullet_limit:
