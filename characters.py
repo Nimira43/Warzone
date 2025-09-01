@@ -280,7 +280,12 @@ class PlayerTank(Tank):
     self.shield = False
     self.shield_time_limit = 5000
     self.shield_timer = pygame.time.get_ticks()
-  
+    self.shield_images = self.assets.shield_images
+    self.shield_img_index = 0
+    self.shield_anim_timer = pygame.time.get_ticks()
+    self.shield_imge = self.shield_images[f'shield_{self.shield_img_index + 1}']
+
+
   def input(self, keypressed):
     if self.colour == 'Gold':
       if keypressed[pygame.K_q]:
