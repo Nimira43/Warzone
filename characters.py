@@ -284,6 +284,7 @@ class PlayerTank(Tank):
     self.shield_img_index = 0
     self.shield_anim_timer = pygame.time.get_ticks()
     self.shield_imge = self.shield_images[f'shield_{self.shield_img_index + 1}']
+    self.shield_image_rect = self.shield_image.get_rect(topleft=(self.rect.topleft))
 
 
   def input(self, keypressed):
