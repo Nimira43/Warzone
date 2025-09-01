@@ -256,6 +256,7 @@ class Tank(pygame.sprite.Sprite):
     if self.tank_health <= 0:
       self.kill()
       Explosion(self.assets, self.groups, self.rect.center, 5, self.score)
+      self.assets.channel_explosion_sound.play(self.assets.explosion_sound)
       return
 
 class PlayerTank(Tank):
