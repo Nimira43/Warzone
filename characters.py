@@ -272,8 +272,14 @@ class PlayerTank(Tank):
   def __init__(self, game, assets, groups, position, direction, colour, tank_level):
     super().__init__(game, assets, groups, position, direction, False, colour, tank_level)
     self.player_group.add(self)
-    self.lives = 3
+    self.lives = 1
+    self.dead = False
+    self.game_over = False
     self.score_list = []
+    self.shield_start = True
+    self.shield = False
+    self.shield_time_limit = 5000
+    self.shield_timer = pygame.time.get_ticks()
   
   def input(self, keypressed):
     if self.colour == 'Gold':
