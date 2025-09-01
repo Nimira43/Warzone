@@ -257,6 +257,7 @@ class Tank(pygame.sprite.Sprite):
       self.kill()
       Explosion(self.assets, self.groups, self.rect.center, 5, self.score)
       self.assets.channel_explosion_sound.play(self.assets.explosion_sound)
+      self.game.enemies_killed -= 1
       return
 
 class PlayerTank(Tank):
