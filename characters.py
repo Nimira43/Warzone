@@ -202,7 +202,11 @@ class Tank(pygame.sprite.Sprite):
         return
     for tank in colliding_sprites:
       if tank == self:
-        continue      
+        continue  
+      if self.spawning and tank.spawning:
+        self.frame_index = 0
+        self.spawning = False
+        self.active = True    
 
   def tank_collisions_with_obstacles (self):
     wall_collision = pygame.sprite.spritecollide(self, self.groups['Impassable_Tiles'], False)
