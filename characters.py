@@ -195,7 +195,10 @@ class Tank(pygame.sprite.Sprite):
           self.rect.left < tank.rect.right and self.rect.right > tank.rect.left:
           self.rect.bottom = tank.rect.top
           self.yPos = self.rect.y
-  
+
+  def spawn_star_collision(self, colliding_sprites):
+    pass
+
   def tank_collisions_with_obstacles (self):
     wall_collision = pygame.sprite.spritecollide(self, self.groups['Impassable_Tiles'], False)
     for obstacle in wall_collision:
