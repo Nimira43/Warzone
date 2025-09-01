@@ -236,6 +236,8 @@ class Tank(pygame.sprite.Sprite):
   def base_collision(self):
     if not self.groups['Eagle'].sprite.active:
       return
+    if self.rect.colliderect(self.groups['Eagle'].sprite.rect):
+      self.groups['Eagle'].sprite.destroy_base()
       
   def shoot(self):
     if self.bullet_sum >= self.bullet_limit:
