@@ -243,6 +243,7 @@ class Tank(pygame.sprite.Sprite):
     if self.bullet_sum >= self.bullet_limit:
       return
     bullet = Bullet(self.groups, self, self.rect.center, self.direction, self.assets)
+    self.assets.channel_fire_sound.play(self.assets.fire_sound)
     self.bullet_sum += 1
 
   def paralyze_tank(self, paralysis_time):
