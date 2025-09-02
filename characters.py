@@ -325,7 +325,9 @@ class PlayerTank(Tank):
         if pygame.time.get_ticks() - self.shield_anim_timer >= 50:
           self.shield_img_index += 1
           self.shield_anim_index = pygame.time.get_ticks()
-
+        self.shield_img_index = self.shield_img_index % 2
+        self.shield_image = self.shield_images[f'shield_{self.shield_img_index + 1}']
+        self.shield_image_rect.topleft = self.rect.topleft
         
 
 
