@@ -321,8 +321,13 @@ class PlayerTank(Tank):
         self.shield_timer = pygame.time.get_ticks()
         self.shield_start = False
         self.shield = True
-      
-      
+      if self.shield:
+        if pygame.time.get_ticks() - self.shield_anim_timer >= 50:
+          self.shield_img_index += 1
+          self.shield_anim_index = pygame.time.get_ticks()
+
+        
+
 
   def draw():
     pass
