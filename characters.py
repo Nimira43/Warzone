@@ -356,3 +356,13 @@ class EnemyTank(Tank):
 
   def draw():
     pass
+
+class SpecialTank(EnemyTank):
+  def __init__():
+    pass
+
+  def update():
+    pass
+
+  def destroy_tank():
+    pass
