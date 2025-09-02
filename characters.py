@@ -334,3 +334,10 @@ class PlayerTank(Tank):
     self.image = self.tank_images[f'Tank_{self.tank_level}'][self.colour][self.direction][self.frame_index]
     self.rect.topleft = (self.xPos, self.yPos)
     self.score_list.clear()
+
+  def respawn_tank():
+    pass
+
+class EnemyTank(Tank):
+  def __init__():
+    pass
