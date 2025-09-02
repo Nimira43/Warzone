@@ -340,7 +340,9 @@ class PlayerTank(Tank):
       window.blit(self.shield_image, self.shield_image_rect)
 
   def move_tank(self, direction):
-    pass
+    if self.spawning:
+      return
+    
 
   def shoot(self):
     pass
