@@ -313,6 +313,11 @@ class PlayerTank(Tank):
       elif keypressed[pygame.K_k]:
         self.move_tank('Right')
   
+  def update(self):
+    if self.game_over:
+      return
+    
+
   def draw():
     pass
 
