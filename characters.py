@@ -332,13 +332,13 @@ class PlayerTank(Tank):
           self.shield = False
     super().update()
         
-  def draw():
+  def draw(self, window):
     pass
 
-  def move_tank():
+  def move_tank(self, direction):
     pass
 
-  def shoot():
+  def shoot(self):
     pass
 
   def destroy_tank(self):
