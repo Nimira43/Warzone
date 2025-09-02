@@ -333,7 +333,9 @@ class PlayerTank(Tank):
     super().update()
         
   def draw(self, window):
-    pass
+    if self.game_over:
+      return
+    super().draw(window)
 
   def move_tank(self, direction):
     pass
