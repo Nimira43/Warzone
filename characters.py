@@ -291,6 +291,8 @@ class PlayerTank(Tank):
 
 
   def input(self, keypressed):
+    if self.game_over or self.dead:
+      return
     if self.colour == 'Gold':
       if keypressed[pygame.K_q]:
         self.move_tank('Up')
@@ -311,6 +313,15 @@ class PlayerTank(Tank):
       elif keypressed[pygame.K_k]:
         self.move_tank('Right')
   
+  def draw():
+    pass
+
+  def move_tank():
+    pass
+
+  def shoot():
+    pass
+
   def new_stage_spawn(self, spawn_pos):
     self.tank_group.add(self)
     self.spwaning = True
