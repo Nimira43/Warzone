@@ -316,7 +316,13 @@ class PlayerTank(Tank):
   def update(self):
     if self.game_over:
       return
-    
+    if not self.spawning:
+      if self.shield_start:
+        self.shield_timer = pygame.time.get_ticks()
+        self.shield_start = False
+        self.shield = True
+      
+      
 
   def draw():
     pass
