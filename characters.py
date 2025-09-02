@@ -342,7 +342,8 @@ class PlayerTank(Tank):
   def move_tank(self, direction):
     if self.spawning:
       return
-    
+    self.player_movement_channel.play(self.movement_sound)
+    super().move_tank(direction)
 
   def shoot(self):
     pass
