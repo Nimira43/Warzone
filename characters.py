@@ -350,3 +350,9 @@ class EnemyTank(Tank):
 
   def ai_move_direction():
     pass
+
+  def update():
+    pass
+
+  def draw():
+    pass
