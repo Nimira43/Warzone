@@ -336,6 +336,8 @@ class PlayerTank(Tank):
     if self.game_over:
       return
     super().draw(window)
+    if self.shield and not self.spawning:
+      window.blit(self.shield_image, self.shield_image_rect)
 
   def move_tank(self, direction):
     pass
