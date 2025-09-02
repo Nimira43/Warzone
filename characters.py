@@ -341,3 +341,12 @@ class PlayerTank(Tank):
 class EnemyTank(Tank):
   def __init__():
     pass
+
+  def ai_shooting():
+    pass
+
+  def ai_move():
+    pass
+
+  def ai_move_direction():
+    pass
