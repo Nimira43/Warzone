@@ -322,6 +322,9 @@ class PlayerTank(Tank):
   def shoot():
     pass
 
+  def destroy_tank(self):
+    pass
+
   def new_stage_spawn(self, spawn_pos):
     self.tank_group.add(self)
     self.spwaning = True
