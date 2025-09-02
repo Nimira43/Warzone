@@ -328,9 +328,10 @@ class PlayerTank(Tank):
         self.shield_img_index = self.shield_img_index % 2
         self.shield_image = self.shield_images[f'shield_{self.shield_img_index + 1}']
         self.shield_image_rect.topleft = self.rect.topleft
+        if pygame.time.get_ticks() - self.shield_time_limit >= self.shield_timer:
+          self.shield = False
+    super().update()
         
-
-
   def draw():
     pass
 
