@@ -272,5 +272,23 @@ class Game:
     self.create_new_stage()
 
   def power_up_fortify(self, start=True, end=False):
-    pass
+    off_x, off_y = gc.SCREEN_BORDER_LEFT, gc.SCREEN_BORDER_TOP
+    positions = [
+      (off_x + gc.imageSize // 2 * 11,
+       off_y + gc.imageSize // 2 * 25),
+      (off_x + gc.imageSize // 2 * 11,
+       off_y + gc.imageSize // 2 * 24),
+      (off_x + gc.imageSize // 2 * 11,
+       off_y + gc.imageSize // 2 * 23),
+      (off_x + gc.imageSize // 2 * 12,
+       off_y + gc.imageSize // 2 * 23),
+      (off_x + gc.imageSize // 2 * 13,
+       off_y + gc.imageSize // 2 * 23),
+      (off_x + gc.imageSize // 2 * 14,
+       off_y + gc.imageSize // 2 * 23),
+      (off_x + gc.imageSize // 2 * 14,
+       off_y + gc.imageSize // 2 * 24),
+      (off_x + gc.imageSize // 2 * 14,
+       off_y + gc.imageSize // 2 * 25),
+    ]
     
