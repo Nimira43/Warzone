@@ -352,6 +352,8 @@ class PlayerTank(Tank):
   def destroy_tank(self):
     if self.shield:
       return
+    if self.dead or self.game_over:
+      return
 
   def new_stage_spawn(self, spawn_pos):
     self.tank_group.add(self)
