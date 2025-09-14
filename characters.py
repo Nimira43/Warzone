@@ -397,7 +397,11 @@ class PlayerTank(Tank):
     self.bullet_speed = gc.TANK_SPEED * (3 * self.bullet_speed_modifier)
     self.bullet_limit = 1
     self.xPos, self.yPos = self.spawn_pos
-
+    self.image = self.tank_images[f'Tank_{self.tank_level}'][self.colour][self.direction][self.frame_index]
+    self.rect = self.image.get_rect(topleft=(self.spawn_pos))
+    self.mask_dict = self.get_various_masks()
+    self.mask = self.mask_dict[self.direction]
+    self.dead = False
 
 class EnemyTank(Tank):
   def __init__():
