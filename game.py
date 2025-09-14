@@ -124,7 +124,6 @@ class Game:
         self.power_up_fortify(start=False, end=True)
         self.fortify = False
 
-
     for dictKey in self.groups.keys():
       if dictKey == 'Player_Tanks':
         continue
@@ -132,6 +131,9 @@ class Game:
         item.update()
     
     self.spawn_enemy_tanks()
+
+    for tank in self.groups['All_Tanks']:
+      if tank.enemy == True and tank.spawning == False: 
 
     if self.enemies_killed <= 0 and self.level_complete == False:
       self.level_complete = True
