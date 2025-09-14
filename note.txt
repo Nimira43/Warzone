@@ -1,5 +1,9 @@
-ammuntion.py and characters.py reviewed and updated.
+reviewed and updated
+--------------------
+ammuntion.py, 
+characters.py 
+eagle.py
 
 next
 ----
-Review and if needed update eagle.py and then others
+Review and if needed update explosions.py and then others
