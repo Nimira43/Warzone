@@ -404,8 +404,8 @@ class PlayerTank(Tank):
     self.dead = False
 
 class EnemyTank(Tank):
-  def __init__():
-    pass
+  def __init__(self, game, assets, groups, pos, dir, colour, tank_lvl):
+    super().__init__(game, assets, groups, pos, dir, True, colour, tank_lvl)
 
   def ai_shooting():
     pass
