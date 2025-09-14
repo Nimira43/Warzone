@@ -393,7 +393,11 @@ class PlayerTank(Tank):
     self.tank_level = 0
     self.power = 1
     self.amphibious = False
-    
+    self.bullet_speed_modifier = 1
+    self.bullet_speed = gc.TANK_SPEED * (3 * self.bullet_speed_modifier)
+    self.bullet_limit = 1
+    self.xPos, self.yPos = self.spawn_pos
+
 
 class EnemyTank(Tank):
   def __init__():
