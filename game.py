@@ -1,11 +1,13 @@
 import pygame
 import game_config as gc
-from characters import Tank, PlayerTank
+from characters import Tank, PlayerTank, EnemyTank, SpecialTank
 from game_hud import GameHud
-from random import choice, shuffle
+from random import choice, shuffle, randint
 from tile import BrickTile, SteelTile, ForestTile, IceTile, WaterTile
 from fade_animate import Fade
 from score_screen import ScoreScreen
+from eagle import Eagle
+from gameover import GameOver
 
 class Game:
   def __init__(self, main, assets, player1=True, player2=False):
