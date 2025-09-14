@@ -369,8 +369,9 @@ class PlayerTank(Tank):
     self.assets.channel_explosion_sound.play(self.assets.explosion_sound)
     self.dead = True
     self.lives -= 1
-    
-
+    if self.lives <= 0:
+      self.game_over = True  
+    self.respawn_tank()
 
   def new_stage_spawn(self, spawn_pos):
     self.tank_group.add(self)
