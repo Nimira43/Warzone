@@ -375,8 +375,9 @@ class PlayerTank(Tank):
 
   def new_stage_spawn(self, spawn_pos):
     self.tank_group.add(self)
-    self.spwaning = True
+    self.spawning = True
     self.active = False
+    self.shield_start = True
     self.direction = 'Up'
     self.xPos, self.yPos = spawn_pos
     self.image = self.tank_images[f'Tank_{self.tank_level}'][self.colour][self.direction][self.frame_index]
