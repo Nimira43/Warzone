@@ -447,6 +447,10 @@ class EnemyTank(Tank):
         if not obst:
           if key not in directional_list_copy:
             directional_list_copy.append(key)
+        elif obst:
+          if value.rect.contains(obst.rect) and key in directional_list_copy:
+            directional_list_copy.remove(key)
+        
 
   def update():
     pass
