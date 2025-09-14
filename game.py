@@ -294,5 +294,9 @@ class Game:
     if start:
       for pos in positions:
         pos_rect = pygame.rect.Rect(pos[0], pos[1],gc.imageSize // 2, gc.imageSize // 2)
+        for rectangle in self.groups['Impassable_Tiles']:
+          if rectangle.rect.colliderect(pos_rect):
+            rectangle.kill()
         
+
     
