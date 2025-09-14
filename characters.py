@@ -364,6 +364,9 @@ class PlayerTank(Tank):
       self.mask_dict = self.get_various_masks()
       self.mask = self.mask_dict[self.direction]
       return
+    
+    Explosion(self.assets, self.groups, self.rect.center, 5, 0)
+    
 
   def new_stage_spawn(self, spawn_pos):
     self.tank_group.add(self)
