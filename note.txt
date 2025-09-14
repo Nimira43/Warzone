@@ -9,10 +9,13 @@ game_assets.py
 game_config.py
 game_hud.py
 gameover.py
+leveleditor.py
+levels.py
+powerups.py
 
 next
 ----
-Review and if needed update leveleditor.py and then others
+Review and if needed update score_screen.py and then others
 
 leave till last
 ---------------

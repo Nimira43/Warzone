@@ -47,7 +47,7 @@ class PowerUps(pygame.sprite.Sprite):
       if tank.enemy:
         score = tank.score
         player.score_list.append(score)
-        tank.destroy_tank(5000)
+        tank.destroy_tank()
 
   def extra_life(self, player):
     player.lives += 1
