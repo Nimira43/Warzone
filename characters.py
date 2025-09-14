@@ -12,7 +12,7 @@ class MyRect(pygame.sprite.Sprite):
     self.rect = pygame.Rect(x, y, width, height)
 
 class Tank(pygame.sprite.Sprite):
-  def __init__(self, game, assets, groups, position, direction, enemy = True, colour='Silver', tank_level=0):
+  def __init__(self, game, assets, groups, position, direction, enemy = True, colour = 'Silver', tank_level = 0):
     super().__init__()
     self.game = game
     self.assets = assets
@@ -211,16 +211,16 @@ class Tank(pygame.sprite.Sprite):
           self.rect.left = obstacle.rect.right
           self.xPos = self.rect.x
            
-      elif self.direction == 'Up':
-        if self.rect.top <= obstacle.rect.bottom:
-          self.rect.top = obstacle.rect.bottom
-          self.yPos = self.rect.y
-      
       elif self.direction == 'Down':
         if self.rect.bottom >= obstacle.rect.top:
           self.rect.bottom = obstacle.rect.top
           self.yPos = self.rect.y
 
+      elif self.direction == 'Up':
+        if self.rect.top <= obstacle.rect.bottom:
+          self.rect.top = obstacle.rect.bottom
+          self.yPos = self.rect.y
+          
   def spawn_star_collision(self, colliding_sprites):
     for tank in colliding_sprites:
       if tank.active:

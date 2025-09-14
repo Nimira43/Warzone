@@ -1,3 +1,6 @@
 Carry on updating charactors.py 
 
 from line 293
+
+-----
+ammunition - checked 01021409
