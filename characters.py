@@ -477,8 +477,10 @@ class EnemyTank(Tank):
     self.ai_move_direction()
     self.ai_shooting()
 
-  def draw():
-    pass
+  def draw(self, window):
+    super().draw(window)
+    for value in self.dir_rec.values():
+      pygame.draw.rect(window, gc.GREEN, value.rect, 2)
 
 class SpecialTank(EnemyTank):
   def __init__():
