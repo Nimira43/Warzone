@@ -21,7 +21,11 @@ class Game:
                    'Bullets': pygame.sprite.Group(),
                    'Destructable_Tiles': pygame.sprite.Group(),
                    'Impassable_Tiles': pygame.sprite.Group(),
-                   'Forest_Tiles': pygame.sprite.Group()}
+                   'Eagle': pygame.sprite.Group(),
+                   'Explosion': pygame.sprite.Group(),
+                   'Forest_Tiles': pygame.sprite.Group(),
+                   'Power_Ups': pygame.sprite.Group(),
+                   'Scores': pygame.sprite.Group()}
     self.top_score = 20000
     self.player1_active = player1
     self.player1_score = 0
