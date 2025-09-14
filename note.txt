@@ -13,7 +13,7 @@ leveleditor.py
 levels.py
 powerups.py
 score_screen.py
-score.py
+scores.py
 startscreen.py
 
 next

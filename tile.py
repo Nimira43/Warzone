@@ -34,7 +34,7 @@ class BrickTile(TileType):
     bullet.update_owner()
     bullet.kill()
     self.health -= 1
-    if self.health <= 0:
+    if bullet.power > 1 or self.health <= 0:
       self.kill()
       return
     if bullet.direction == 'Left':
@@ -60,6 +60,8 @@ class SteelTile(TileType):
   def hit_by_bullet(self, bullet):
     bullet.update_owner()
     bullet.kill()
+    if bullet.power > 2:
+      self.kill()
 
 class ForestTile(TileType):
   def __init__(self, pos, group, map_tile):
