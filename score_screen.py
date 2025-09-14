@@ -60,13 +60,13 @@ class ScoreScreen:
     window.blit(self.stage_num, self.stage_num_rect)
 
     if self.game.player1_active:
-      window.blit(self.pl_1_score, self.pl1_score_rect)
+      window.blit(self.pl_1_score, self.pl_1_score_rect)
       for value in self.p1_tank_num_imgs.values():
         window.blit(value[0], value[1])
       for value in self.p1_tank_score_imgs.values():
         window.blit(value[0], value[1])
     if self.game.player2_active:
-      window.blit(self.pl_2_score, self.pl2_score_rect)
+      window.blit(self.pl_2_score, self.pl_2_score_rect)
       for value in self.p2_tank_num_imgs.values():
         window.blit(value[0], value[1])
       for value in self.p2_tank_score_imgs.values():
