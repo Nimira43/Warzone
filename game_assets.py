@@ -58,6 +58,9 @@ class GameAssets:
     
     self.explosion_sound = pygame.mixer.Sound('sounds/explosion.ogg')
     self.channel_explosion_sound = pygame.mixer.Channel(5)
+    
+    self.bonus_sound = pygame.mixer.Sound('sounds/bonus.ogg')
+    self.channel_bonus_sound = pygame.mixer.Channel(6)
 
   def _load_all_tank_images(self):
     tank_image_dict = {}
