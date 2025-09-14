@@ -115,6 +115,9 @@ class Game:
           self.game_over_screen.activate()
           return
 
+    elif self.game_over and not self.end_game and not self.game_over_screen.active:
+      self.stage_transition(True)
+      return
 
 
     for dictKey in self.groups.keys():
