@@ -463,7 +463,8 @@ class EnemyTank(Tank):
         if key in directional_list_copy:
           directional_list_copy.remove(key)      
 
-        
+    if self.move_directions != directional_list_copy or (self.direction not in directional_list_copy):
+      self.move_directions = directional_list_copy.copy()   
         
 
   def update():
