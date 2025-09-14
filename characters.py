@@ -366,7 +366,11 @@ class PlayerTank(Tank):
       return
     
     Explosion(self.assets, self.groups, self.rect.center, 5, 0)
+    self.assets.channel_explosion_sound.play(self.assets.explosion_sound)
+    self.dead = True
+    self.lives -= 1
     
+
 
   def new_stage_spawn(self, spawn_pos):
     self.tank_group.add(self)
