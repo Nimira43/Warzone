@@ -37,7 +37,14 @@ class GameAssets:
       self.score_sheet_images[image] = self.load_ind_img(image)
 
     self.game_start_sound = pygame.mixer.Sound('sounds/gamestart.ogg')
+
     self.movement_sound = pygame.mixer.Sound('sounds/background-player.ogg')
+    self.movement_sound.set_volume(0.7)
+    self.channel_player_movement_sound = pygame.mixer.Channel(0)
+    
+    self.enemy_movement_sound = pygame.mixer.Sound('sounds/background.ogg')
+    self.enemy_movement_sound.set_volume(0.4)
+    self.channel_player_movement_sound = pygame.mixer.Channel(1)
 
   def _load_all_tank_images(self):
     tank_image_dict = {}
