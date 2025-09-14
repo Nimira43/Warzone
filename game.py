@@ -21,7 +21,7 @@ class Game:
                    'Bullets': pygame.sprite.Group(),
                    'Destructable_Tiles': pygame.sprite.Group(),
                    'Impassable_Tiles': pygame.sprite.Group(),
-                   'Eagle': pygame.sprite.Group(),
+                   'Eagle': pygame.sprite.GroupSingle(),
                    'Explosion': pygame.sprite.Group(),
                    'Forest_Tiles': pygame.sprite.Group(),
                    'Power_Ups': pygame.sprite.Group(),
@@ -33,26 +33,31 @@ class Game:
     self.player2_score = 0
 
     self.hud = GameHud(self, self.assets)
-    self.level_num = 15
+    self.level_num = 1
     self.level_complete = False
     self.level_transition_timer = None
     self.data = self.main.levels
 
     self.fade = Fade(self, self.assets, 10)
     self.scoreScreen = ScoreScreen(self, self.assets)
+    self.game_over_screen = GameOver(self, self.assets)
     
     if self.player1_active: 
       self.player1 = PlayerTank(self, self.assets, self.groups, gc.Pl1_position, 'Up', 'Gold', 0)
     if self.player2_active: 
-      self.player2 = PlayerTank(self, self.assets, self.groups, gc.Pl2_position, 'Up', 'Green', 1)
+      self.player2 = PlayerTank(self, self.assets, self.groups, gc.Pl2_position, 'Up', 'Green', 0)
 
     self.enemies = 20
     self.enemy_tank_spawn_timer = gc.TANK_SPAWNING_TIME
     self.enemy_spawn_positions = [gc.Pc1_position, gc.Pc2_position, gc.Pc3_position]
 
     self.create_new_stage()
+    self.fortify = False
+    self.fortify_timer = pygame.time.get_ticks()
+
     self.end_game = False
     self.game_on = False
+    self.game_over = False
 
   def input(self):
     keypressed = pygame.key.get_pressed()
