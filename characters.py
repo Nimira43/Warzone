@@ -354,6 +354,11 @@ class PlayerTank(Tank):
       return
     if self.dead or self.game_over:
       return
+    if self.tank_health > 1:
+      self.tank_health = 1
+      self.tank_level = 0
+      self.power = 1
+      self.amphibious = False
 
   def new_stage_spawn(self, spawn_pos):
     self.tank_group.add(self)
