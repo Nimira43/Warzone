@@ -425,6 +425,8 @@ class EnemyTank(Tank):
       return
     if self.bullet_sum < self.bullet_limit:
       if pygame.time.get_ticks() - self.shot_timer >= self.time_between_shots:
+        self.shoot()
+        self.shot_timer = pygame.time.get_ticks()
 
   def ai_move():
     pass
