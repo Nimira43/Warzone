@@ -101,6 +101,11 @@ class Game:
     if not self.game_over:
       if self.player1_active and self.player2_active:
         if self.player1.game_over and self.player2.game_over and not self.game_over_screen.active:
+          self.groups['All_Tanks'].empty()
+          self.game_over = True
+          self.assets.channel_gameover_sound.play(self.assets.gameover_sound)
+          self.game_over_screen.activate()
+          return
 
 
 
