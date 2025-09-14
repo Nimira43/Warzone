@@ -13,10 +13,12 @@ leveleditor.py
 levels.py
 powerups.py
 score_screen.py
+score.py
+startscreen.py
 
 next
 ----
-Review and if needed update score.py and then others
+tile.py
 
 leave till last
 ---------------

@@ -20,7 +20,7 @@ class StartScreen:
 
     self.token_index = 0
     self.token_image = self.assets.start_screen_token
-    self.token_rect = self.token_image.get_rect(topleft=self.options_positions[self.token_index])
+    self.token_rect = self.token_image.get_rect(topleft=self.option_positions[self.token_index])
     self.start_screen_active = False
 
   def input(self):
@@ -62,18 +62,15 @@ class StartScreen:
 
   def _switch_options_main_menu(self, num):
     self.token_index += num
-    self.token_index = self.token_index % len(self.options_positions)
-    self.token_rect.topleft = self.options_positions[self.token_index]
+    self.token_index = self.token_index % len(self.option_positions)
+    self.token_rect.topleft = self.option_positions[self.token_index]
 
   def _selected_option_action(self):
     if self.token_index == 0:
-      print('Start new 1 Player game')
       self.main.start_new_game(player1=True, player2=False)
     elif self.token_index == 1:
-      print('Start new 2 Player game')
       self.main.start_new_game(player1=True, player2=True)
     elif self.token_index == 2:
-      print('Start Level Editor')
       self.main.start_level_creator()
 
   def _animate_screen_into_position(self):
