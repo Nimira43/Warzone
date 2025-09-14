@@ -239,7 +239,13 @@ class Game:
     if pygame.time.get_ticks() - self.enemy_tank_spawn_timer >= gc.TANK_SPAWNING_TIME:
       position = self.enemy_spawn_positions[self.spawn_pos_index % 3]
       tank_level = gc.Tank_Critrea[self.spawn_queue[self.spawn_queue_index % len(self.spawn_queue)]]['image']
-      Tank(self, self.assets, self.groups, position, 'Down', True, 'Silver', tank_level)
+
+      special_tank = randint(1, len(self.spawn_queue))
+      if special_tank == self.spawn_queue_index:
+        SpecialTank(self, self.assets, self.groups, position, 'Down', 'Silver', tank_level)
+      else:
+        EnemyTank(self, self.assets, self.groups, position, 'Down', 'Silver', tank_level)
+
       self.enemy_tank_spawn_timer = pygame.time.get_ticks()
       self.spawn_pos_index += 1
       self.spawn_queue_index += 1
