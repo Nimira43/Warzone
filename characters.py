@@ -483,8 +483,9 @@ class EnemyTank(Tank):
       pygame.draw.rect(window, gc.GREEN, value.rect, 2)
 
 class SpecialTank(EnemyTank):
-  def __init__():
-    pass
+  def __init__(self, game, assets, groups, pos, dir, colour, tank_lvl):
+    super().__init__(game, assets, groups, pos, dir, colour, tank_lvl)
+    
 
   def update():
     pass
