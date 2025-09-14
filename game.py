@@ -173,10 +173,13 @@ class Game:
       value.empty()
 
     self.current_level_data = self.data.level_data[self.level_num - 1]
-    self.enemies = 3
+    self.enemies = 5
     self.enemies_killed = self.enemies
     self.load_level_data(self.current_level_data)
+    self.eagle = Eagle(self, self.assets, self.groups)
     self.level_complete = False
+    self.assets.game_start_sound.play()
+
     self.fade.level = self.level_num
     self.fade.stage_image = self.fade.create_stage_image()
     self.fade.fade_active = True
