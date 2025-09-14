@@ -143,7 +143,7 @@ class Game:
 
     if self.level_complete:
       if pygame.time.get_ticks() - self.level_transition_timer >= gc.TRANSITION_TIMER: 
-        self.stage_transition()
+        self.stage_transition(False)
         
   def draw(self, window):
       self.hud.draw(window)
