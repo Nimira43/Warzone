@@ -488,8 +488,8 @@ class SpecialTank(EnemyTank):
     self.colour_swap_timer = pygame.time.get_ticks()
     self.special = True
 
-  def update():
-    pass
+  def update(self):
+    super.update
 
   def destroy_tank():
     pass
