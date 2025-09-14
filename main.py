@@ -9,6 +9,7 @@ from startscreen import StartScreen
 class Main:
   def __init__(self):
     pygame.init()
+    pygame.mixer.init()
     self.screen = pygame.display.set_mode((gc.SCREENWIDTH, gc.SCREENHEIGHT))
     pygame.display.set_caption('Warzone')
     
