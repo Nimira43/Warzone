@@ -485,7 +485,8 @@ class EnemyTank(Tank):
 class SpecialTank(EnemyTank):
   def __init__(self, game, assets, groups, pos, dir, colour, tank_lvl):
     super().__init__(game, assets, groups, pos, dir, colour, tank_lvl)
-    
+    self.colour_swap_timer = pygame.time.get_ticks()
+    self.special = True
 
   def update():
     pass
