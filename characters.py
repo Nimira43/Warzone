@@ -406,6 +406,10 @@ class PlayerTank(Tank):
 class EnemyTank(Tank):
   def __init__(self, game, assets, groups, pos, dir, colour, tank_lvl):
     super().__init__(game, assets, groups, pos, dir, True, colour, tank_lvl)
+    self.time_between_shots = random.choice([300, 600, 900])
+    self.shot_timer = pygame.time.get_ticks()
+
+    
 
   def ai_shooting():
     pass
