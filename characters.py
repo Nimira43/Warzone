@@ -428,7 +428,8 @@ class EnemyTank(Tank):
         self.shoot()
         self.shot_timer = pygame.time.get_ticks()
 
-  def ai_move():
+  def ai_move(self, direction):
+    super().move_tank(direction)
     pass
 
   def ai_move_direction():
