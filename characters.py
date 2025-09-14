@@ -416,6 +416,9 @@ class EnemyTank(Tank):
       'Down': MyRect(self.xPos, self.yPos + self.height, self.width, self.height // 2)
     }
 
+    self.move_directions = []
+    self.change_direction_timer = pygame.time.get_ticks()
+
   def ai_shooting():
     pass
 
