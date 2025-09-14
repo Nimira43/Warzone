@@ -118,6 +118,11 @@ class Game:
     elif self.game_over and not self.end_game and not self.game_over_screen.active:
       self.stage_transition(True)
       return
+    
+    if self.fortify:
+      if pygame.time.get_ticks() - self.fortify_timer >= 10000:
+        self.power_up_fortify(start=False, end=True)
+        self.fortify = False
 
 
     for dictKey in self.groups.keys():
@@ -249,4 +254,7 @@ class Game:
     self.player1_score = p1_score
     self.player2_score = p2_score
     self.create_new_stage()
+
+  def power_up_fortify(self, start=True, end=False):
+    pass
     
