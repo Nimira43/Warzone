@@ -384,8 +384,11 @@ class PlayerTank(Tank):
     self.rect.topleft = (self.xPos, self.yPos)
     self.score_list.clear()
 
-  def respawn_tank():
-    pass
+  def respawn_tank(self):
+    self.spawning = True
+    self.active = False
+    self.spawn_timer = pygame.time.get_ticks()
+    self.shield_start = True
 
 class EnemyTank(Tank):
   def __init__():
