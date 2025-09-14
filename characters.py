@@ -439,6 +439,10 @@ class EnemyTank(Tank):
     directional_list_copy = self.move_directions.copy()
     if pygame.time.get_ticks() - self.change_direction_timer <= 750:
       return
+    
+    for key, value in self.dir_rec.items():
+      if pygame.Rect.contains(self.game_screen_rect.rect, value):
+        obst = pygame.sprite.spritecollideany(value, self.groups['Impassable_Tiles'])
 
   def update():
     pass
