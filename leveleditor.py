@@ -88,11 +88,16 @@ class LevelEditor:
     icon_grid_pos_col = (self.icon_rect.left - gc.SCREEN_BORDER_LEFT // (gc.imageSize // 2))
     icon_grid_pos_row = (self.icon_rect.top - gc.SCREEN_BORDER_TOP // (gc.imageSize // 2))
 
-    if (0 <= icon_grid_pos_row < len(self.matrix) - 1 and 0 <= icon_grid_pos_col < len(self.matrix[0]) - 1):
-      self.matrix[icon_grid_pos_row][icon_grid_pos_col] = self.insert_tile[0]
-      self.matrix[icon_grid_pos_row][icon_grid_pos_col + 1] = self.insert_tile[1]
-      self.matrix[icon_grid_pos_row + 1][icon_grid_pos_col] = self.insert_tile[2]
-      self.matrix[icon_grid_pos_row + 1][icon_grid_pos_col + 1] = self.insert_tile[3]
+    # if (0 <= icon_grid_pos_row < len(self.matrix) - 1 and 0 <= icon_grid_pos_col < len(self.matrix[0]) - 1):
+    #   self.matrix[icon_grid_pos_row][icon_grid_pos_col] = self.insert_tile[0]
+    #   self.matrix[icon_grid_pos_row][icon_grid_pos_col + 1] = self.insert_tile[1]
+    #   self.matrix[icon_grid_pos_row + 1][icon_grid_pos_col] = self.insert_tile[2]
+    #   self.matrix[icon_grid_pos_row + 1][icon_grid_pos_col + 1] = self.insert_tile[3]
+      
+    self.matrix[icon_grid_pos_row][icon_grid_pos_col] = self.insert_tile[0]
+    self.matrix[icon_grid_pos_row][icon_grid_pos_col + 1] = self.insert_tile[1]
+    self.matrix[icon_grid_pos_row + 1][icon_grid_pos_col] = self.insert_tile[2]
+    self.matrix[icon_grid_pos_row + 1][icon_grid_pos_col + 1] = self.insert_tile[3]
 
   def draw(self, window):
     window.blit(self.overlay_screen, (0, 0))

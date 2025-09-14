@@ -6,7 +6,15 @@ eagle.py
 explosion.py
 fade_animate.py
 game_assets.py
+game_config.py
+game_hud.py
+gameover.py
 
 next
 ----
-Review and if needed update game_config.py and then others
+Review and if needed update leveleditor.py and then others
+
+leave till last
+---------------
+game.py
+main.py
