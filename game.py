@@ -69,9 +69,11 @@ class Game:
     for event in pygame.event.get():
       if event.type == pygame.QUIT:
         self.main.run = False
+
       if event.type == pygame.KEYDOWN:
         if event.key == pygame.K_ESCAPE:
-          self.main.run = False
+          self.end_game = True
+        
         if event.key == pygame.K_SPACE:
           if self.player1_active:
             self.player1.shoot()
