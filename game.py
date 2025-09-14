@@ -134,6 +134,8 @@ class Game:
 
     for tank in self.groups['All_Tanks']:
       if tank.enemy == True and tank.spawning == False: 
+        self.assets.channel_enemy_movement_sound.play(self.assets.enemy_movement_sound)
+        break
 
     if self.enemies_killed <= 0 and self.level_complete == False:
       self.level_complete = True
