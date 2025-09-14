@@ -473,6 +473,9 @@ class EnemyTank(Tank):
     super().update()
     if self.spawning:
       return
+    self.ai_move(self.direction)
+    self.ai_move_direction()
+    self.ai_shooting()
 
   def draw():
     pass
