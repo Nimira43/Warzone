@@ -297,6 +297,8 @@ class Game:
         for rectangle in self.groups['Impassable_Tiles']:
           if rectangle.rect.colliderect(pos_rect):
             rectangle.kill()
-        
+        map_tile = SteelTile(pos, self.groups['Destructable_tiles'], self.assets.steel_tiles)
+        self.groups['Impassable_Tiles'].add(map_tile)
+    
 
     
