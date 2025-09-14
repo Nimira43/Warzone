@@ -8,6 +8,10 @@ class ScoreBanner(pygame.sprite.Sprite):
     self.group['Score'].add(self)
     self.pos = pos
     self.score = str(score)
+    self.images = self.assets.score
+    self.image = self.images[self.score]
+    self.rect = self.images.get_rect(center=self.pos)
+    self.timer = pygame.time.get_ticks()
 
   def update(self):
     self.rect.y -= 1
