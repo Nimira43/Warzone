@@ -15,12 +15,12 @@ powerups.py
 score_screen.py
 scores.py
 startscreen.py
+tile.py
 
 next
 ----
-tile.py
+main.py
 
 leave till last
 ---------------
 game.py
-main.py
