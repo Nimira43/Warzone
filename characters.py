@@ -469,9 +469,10 @@ class EnemyTank(Tank):
         self.direction = random.choice(self.move_directions)
       self.change_direction_timer = pygame.time.get_ticks()
         
-
-  def update():
-    pass
+  def update(self):
+    super().update()
+    if self.spawning:
+      return
 
   def draw():
     pass
