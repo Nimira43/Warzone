@@ -83,7 +83,7 @@ class Tank(pygame.sprite.Sprite):
           self.spawning = False
           self.active = True
         else:
-          self.spawn_star_collection(colliding_sprites)
+          self.spawn_star_collision(colliding_sprites)
       return
     if self.paralyzed:
       if pygame.time.get_ticks() - self.paralysis_timer >= self.paralysis:

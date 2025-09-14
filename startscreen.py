@@ -12,7 +12,7 @@ class StartScreen:
     self.x, self.y = self.rect.topleft
     self.speed = gc.SCREEN_SCROLL_SPEED
 
-    self.options_positions = [
+    self.option_positions = [
       (4 * gc.imageSize, 7.75 * gc.imageSize),
       (4 * gc.imageSize, 8.75 * gc.imageSize),
       (4 * gc.imageSize, 9.75 * gc.imageSize),
