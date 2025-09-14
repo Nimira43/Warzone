@@ -409,7 +409,12 @@ class EnemyTank(Tank):
     self.time_between_shots = random.choice([300, 600, 900])
     self.shot_timer = pygame.time.get_ticks()
 
-    
+    self.dir_rec = {
+      'Left': MyRect(self.xPos - (self.width // 2), self.yPos, self.width // 2, self.height),
+      'Right': MyRect(self.xPos + self.width, self.yPos, self.width // 2, self.height),
+      'Up': MyRect(self.xPos, self.yPos - (self.height // 2), self.width, self.height // 2),
+      'Down': MyRect(self.xPos, self.yPos + self.height, self.width, self.height // 2)
+    }
 
   def ai_shooting():
     pass
