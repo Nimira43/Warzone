@@ -389,6 +389,11 @@ class PlayerTank(Tank):
     self.active = False
     self.spawn_timer = pygame.time.get_ticks()
     self.shield_start = True
+    self.direction = 'Up'
+    self.tank_level = 0
+    self.power = 1
+    self.amphibious = False
+    
 
 class EnemyTank(Tank):
   def __init__():
