@@ -431,6 +431,9 @@ class EnemyTank(Tank):
   def ai_move(self, direction):
     super().move_tank(direction)
     self.dir_rec['Left'].rect.update(self.xPos - (self.width // 2), self.yPos, self.width // 2, self.height)
+    self.dir_rec['Right'].rect.update(self.xPos + self.width, self.yPos, self.width // 2, self.height)
+    self.dir_rec['Up'].rect.update(self.xPos, self.yPos - (self.height // 2), self.width, self.height // 2)
+    self.dir_rec['Down'].rect.update(self.xPos, self.yPos + self.height, self.width, self.height // 2)
 
   def ai_move_direction():
     pass
