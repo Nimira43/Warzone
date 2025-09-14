@@ -435,8 +435,10 @@ class EnemyTank(Tank):
     self.dir_rec['Up'].rect.update(self.xPos, self.yPos - (self.height // 2), self.width, self.height // 2)
     self.dir_rec['Down'].rect.update(self.xPos, self.yPos + self.height, self.width, self.height // 2)
 
-  def ai_move_direction():
-    pass
+  def ai_move_direction(self):
+    directional_list_copy = self.move_directions.copy()
+    if pygame.time.get_ticks() - self.change_direction_timer <= 750:
+      return
 
   def update():
     pass
