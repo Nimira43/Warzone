@@ -359,6 +359,7 @@ class PlayerTank(Tank):
       self.tank_level = 0
       self.power = 1
       self.amphibious = False
+      self.image = self.tank_images[f'Tank_{self.tank_level}'][self.colour][self.direction][self.frame_index]
 
   def new_stage_spawn(self, spawn_pos):
     self.tank_group.add(self)
