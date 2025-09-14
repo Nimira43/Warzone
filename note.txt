@@ -5,7 +5,8 @@ characters.py
 eagle.py
 explosion.py
 fade_animate.py
+game_assets.py
 
 next
 ----
-Review and if needed update game_assets.py and then others
+Review and if needed update game_config.py and then others

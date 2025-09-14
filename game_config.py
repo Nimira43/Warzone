@@ -16,8 +16,8 @@ SCREEN_BORDER_BOTTOM = GAME_SCREEN[3] + SCREEN_BORDER_TOP
 
 SCREEN_SCROLL_SPEED = 5
 TRANSITION_TIMER = 3000
-
 FPS = 60
+
 BLACK = (0, 0, 0)
 RED = (255, 0, 0)
 GREY = (99, 99, 99)
@@ -38,7 +38,7 @@ SPAWN_STAR = {'star_0': [(spriteSize * 16), (spriteSize * 6), spriteSize, sprite
               'star_3': [(spriteSize * 19), (spriteSize * 6), spriteSize, spriteSize]}
 
 SHIELD = {'shield_1': [(spriteSize * 16), (spriteSize * 9), 16, 16],
-          'shield_2': [(spriteSize * 16), (spriteSize * 9), 16, 16]}
+          'shield_2': [(spriteSize * 17), (spriteSize * 9), 16, 16]}
 
 POWER_UPS = {'shield':          [(16 * 16), (16 * 7), 16, 16],
             'freeze':           [(16 * 17), (16 * 7), 16, 16],
@@ -131,4 +131,4 @@ Tank_spawn_queue = {'queue_0': [90, 10, 0, 0],
                     'queue_8': [10, 30, 30, 30],
                     'queue_9': [10, 20, 40, 30],
                     'queue_10': [10, 10, 50, 30],
-                    'queue_11': [0, 10, 50, 40],}
+                    'queue_11': [0, 10, 50, 40]}
