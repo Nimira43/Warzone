@@ -492,6 +492,8 @@ class SpecialTank(EnemyTank):
     super().update()
     if self.special:
       if pygame.time.get_ticks() - self.colour_swap_timer >= 100:
+        self.colour = 'Special' if self.colour == 'Silver' else 'Silver'
+        self.colour_swap_timer = pygame.time.get_ticks()
 
   def destroy_tank():
     pass
