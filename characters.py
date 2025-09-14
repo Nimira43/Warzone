@@ -220,7 +220,7 @@ class Tank(pygame.sprite.Sprite):
         if self.rect.top <= obstacle.rect.bottom:
           self.rect.top = obstacle.rect.bottom
           self.yPos = self.rect.y
-          
+
   def spawn_star_collision(self, colliding_sprites):
     for tank in colliding_sprites:
       if tank.active:
@@ -289,7 +289,6 @@ class PlayerTank(Tank):
     self.movement_sound = self.assets.movement_sound
     self.player_movement_channel = pygame.mixer.Channel(0)
 
-
   def input(self, keypressed):
     if self.game_over or self.dead:
       return
@@ -346,7 +345,9 @@ class PlayerTank(Tank):
     super().move_tank(direction)
 
   def shoot(self):
-    pass
+    if self.game_over:
+      return
+    super().shoot()
 
   def destroy_tank(self):
     pass
