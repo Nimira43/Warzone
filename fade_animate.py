@@ -22,7 +22,7 @@ class Fade:
     self.bot_rect_end_y = gc.SCREENHEIGHT // 2
     self.bot_y = self.bot_rect.top
     self.stage_pic_width, self.stage_pic_height = self.images['stage'].get_size()
-    self.num_pic_width, self.num_pic_height = self.images['num_9'].get_size()
+    self.num_pic_width, self.num_pic_height = self.images['num_0'].get_size()
     self.stage_image = self.create_stage_image()
     self.stage_image_rect = self.stage_image.get_rect(center=(gc.SCREENWIDTH // 2, gc.SCREENHEIGHT // 2))
 
@@ -87,7 +87,7 @@ class Fade:
       surface.blit(self.images['num_0'], (self.stage_pic_width + self.num_pic_width, 0))
     else: 
       surface.blit(self.images[f'num_{str(self.level)[0]}'], (self.stage_pic_width + self.num_pic_width, 0))
-    surface.blit(self.images[f'num_{str(self.level)[-1]}'], (self.stage_pic_width + self.num_pic_width * 2, 0))
+    surface.blit(self.images[f'num_{str(self.level)[-1]}'], (self.stage_pic_width + (self.num_pic_width * 2), 0))
     return surface
     
     
