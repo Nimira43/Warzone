@@ -251,7 +251,7 @@ class Game:
       self.spawn_queue_index += 1
       self.enemies -= 1
 
-  def stage_transition(self):
+  def stage_transition(self, game_over=False):
     if not self.scoreScreen.active:
       self.scoreScreen.timer = pygame.time.get_ticks()
       if self.player1_active:
@@ -262,7 +262,7 @@ class Game:
         self.scoreScreen.p2_kill_list = sorted(self.player2.score_list)
       self.scoreScreen.update_basic_info(self.top_score, self.level_num)
     self.scoreScreen.active = True
-    self.scoreScreen.update()
+    self.scoreScreen.update(game_over)
 
   def change_level(self, p1_score, p2_score):
     self.level_num += 1
