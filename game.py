@@ -88,12 +88,21 @@ class Game:
   def update(self):
     self.hud.update()
 
+    if self.game_over_screen.active:
+      self.game_over_screen.update()
+
     if self.fade.fade_active:
       self.fade.update()
       if not self.fade.fade_active:
         for tank in self.groups['All_Tanks']:
           tank.spawn_timer = pygame.time.get_ticks()
       return
+    
+    if not self.game_over:
+      if self.player1_active and self.player2_active:
+        if self.player1.game_over and self.player2.game_over and not self.game_over_screen.active:
+
+
 
     for dictKey in self.groups.keys():
       if dictKey == 'Player_Tanks':
