@@ -498,4 +498,7 @@ class SpecialTank(EnemyTank):
   def destroy_tank(self):
     if self.special:
       self.special = False
-      
+      print('Power up activated')
+      PowerUps(self.game, self.assets, self.groups)
+    super().destroy_tank()
+
