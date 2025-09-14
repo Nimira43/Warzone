@@ -13,12 +13,13 @@ class GameAssets:
     self.tank_images = self._load_all_tank_images()        
     self.bullet_images = self._get_specified_images(self.spritesheet, gc.BULLETS, gc.BLACK)        
     self.shield_images = self._get_specified_images(self.spritesheet, gc.SHIELD, gc.BLACK)        
-    self.spawn_star_images = self._get_specified_images(self.spritesheet, gc.SPAWN_STAR, gc.BLACK)        
+    self.spawn_star_images = self._get_specified_images(self.spritesheet, gc.SPAWN_STAR, gc.BLACK)   
+
     self.power_up_images = self._get_specified_images(self.spritesheet, gc.POWER_UPS, gc.BLACK)        
-    
     self.flag = self._get_specified_images(self.spritesheet, gc.FLAG, gc.BLACK)        
     self.explosions = self._get_specified_images(self.spritesheet, gc.EXPLOSIONS, gc.BLACK)        
-    self.score = self._get_specified_images(self.spritesheet, gc.SCORE, gc.BLACK)        
+    self.score = self._get_specified_images(self.spritesheet, gc.SCORE, gc.BLACK)  
+
     self.hud_images = self._get_specified_images(self.spritesheet, gc.HUD_INFO, gc.BLACK, transparent=False)        
     self.context = self._get_specified_images(self.spritesheet, gc.CONTEXT, gc.BLACK)     
 
@@ -34,6 +35,9 @@ class GameAssets:
     self.score_sheet_images = {}
     for image in ['hiScore', 'arrow', 'player1', 'player2', 'pts', 'stage', 'total']:
       self.score_sheet_images[image] = self.load_ind_img(image)
+
+    self.game_start_sound = pygame.mixer.Sound('sounds/gamestart.ogg')
+    self.movement_sound = pygame.mixer.Sound('sounds/background-player.ogg')
 
   def _load_all_tank_images(self):
     tank_image_dict = {}
