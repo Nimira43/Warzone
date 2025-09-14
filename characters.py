@@ -459,6 +459,10 @@ class EnemyTank(Tank):
           if key in directional_list_copy:
             directional_list_copy.remove(key)
 
+      else:
+        if key in directional_list_copy:
+          directional_list_copy.remove(key)      
+
         
         
 
