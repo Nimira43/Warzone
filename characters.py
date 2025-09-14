@@ -444,6 +444,10 @@ class EnemyTank(Tank):
       if pygame.Rect.contains(self.game_screen_rect.rect, value):
         obst = pygame.sprite.spritecollideany(value, self.groups['Impassable_Tiles'])
 
+        if not obst:
+          if key not in directional_list_copy:
+            directional_list_copy.append(key)
+
   def update():
     pass
 
