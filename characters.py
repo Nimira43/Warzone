@@ -465,6 +465,9 @@ class EnemyTank(Tank):
 
     if self.move_directions != directional_list_copy or (self.direction not in directional_list_copy):
       self.move_directions = directional_list_copy.copy()   
+      if len(self.move_directions) > 0:
+        self.direction = random.choice(self.move_directions)
+      self.change_direction_timer = pygame.time.get_ticks()
         
 
   def update():
