@@ -291,4 +291,8 @@ class Game:
       (off_x + gc.imageSize // 2 * 14,
        off_y + gc.imageSize // 2 * 25),
     ]
+    if start:
+      for pos in positions:
+        pos_rect = pygame.rect.Rect(pos[0], pos[1],gc.imageSize // 2, gc.imageSize // 2)
+        
     
