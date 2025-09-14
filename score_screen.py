@@ -109,9 +109,9 @@ class ScoreScreen:
 
   def update_player_score_images(self):
     self.pl_1_score = self.number_image(self.p1_score, self.orange_nums)
-    self.pl1_score_rect = self.pl_1_score.get_rect(topleft=(gc.imageSize // 2 * 11 - self.pl_1_score.get_width(), gc.imageSize // 2 * 10))
+    self.pl_1_score_rect = self.pl_1_score.get_rect(topleft=(gc.imageSize // 2 * 11 - self.pl_1_score.get_width(), gc.imageSize // 2 * 10))
     self.pl_2_score = self.number_image(self.p2_score, self.orange_nums)
-    self.pl2_score_rect = self.pl_2_score.get_rect(topleft=(gc.imageSize // 2 * 29 - self.pl_2_score.get_width(), gc.imageSize // 2 * 10))
+    self.pl_2_score_rect = self.pl_2_score.get_rect(topleft=(gc.imageSize // 2 * 29 - self.pl_2_score.get_width(), gc.imageSize // 2 * 10))
 
   def _create_top_score_and_stage_number_images(self):
     self.hi_score_nums_total = self.number_image(self.top_score, self.orange_nums)

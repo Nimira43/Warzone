@@ -12,10 +12,11 @@ gameover.py
 leveleditor.py
 levels.py
 powerups.py
+score_screen.py
 
 next
 ----
-Review and if needed update score_screen.py and then others
+Review and if needed update score.py and then others
 
 leave till last
 ---------------
