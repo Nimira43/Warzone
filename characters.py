@@ -450,6 +450,11 @@ class EnemyTank(Tank):
         elif obst:
           if value.rect.contains(obst.rect) and key in directional_list_copy:
             directional_list_copy.remove(key)
+        else:
+          if key in directional_list_copy and key != self.direction:
+            directional_list_copy.remove(key)
+
+        
         
 
   def update():
