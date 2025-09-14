@@ -418,6 +418,7 @@ class EnemyTank(Tank):
 
     self.move_directions = []
     self.change_direction_timer = pygame.time.get_ticks()
+    self.game_screen_rect = MyRect(gc.GAME_SCREEN[0], gc.GAME_SCREEN[1], gc.GAME_SCREEN[2], gc.GAME_SCREEN[3])
 
   def ai_shooting():
     pass
