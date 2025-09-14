@@ -361,7 +361,9 @@ class PlayerTank(Tank):
       self.amphibious = False
       self.image = self.tank_images[f'Tank_{self.tank_level}'][self.colour][self.direction][self.frame_index]
       self.rect = self.image.get_rect(topleft=(self.xPos, self.yPos))
-      
+      self.mask_dict = self.get_various_masks()
+      self.mask = self.mask_dict[self.direction]
+      return
 
   def new_stage_spawn(self, spawn_pos):
     self.tank_group.add(self)
