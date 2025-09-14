@@ -65,6 +65,8 @@ class GameAssets:
     self.gameover_sound = pygame.mixer.Sound('sounds/gameover.ogg')
     self.channel_gameover_sound = pygame.mixer.Channel(7)
 
+    self.score_sound = pygame.mixer.Sound('sounds/score.ogg')
+
   def _load_all_tank_images(self):
     tank_image_dict = {}
     for tank in range(8):
