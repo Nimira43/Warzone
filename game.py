@@ -163,6 +163,9 @@ class Game:
       if self.fade.fade_active:
         self.fade.draw(window)
 
+      if self.game_over_screen.active:
+        self.game_over_screen.draw(window)
+
   def create_new_stage(self):
     for key, value in self.groups.items():
       if key == 'Player_Tanks':
